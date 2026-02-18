@@ -31,6 +31,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Push โปรเจกต์ไปที่ Git** (GitHub / GitLab / Bitbucket) แล้วเชื่อมกับ [Vercel](https://vercel.com/new).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **ตั้งค่า Environment Variables** ใน Vercel Dashboard (Settings → Environment Variables):
+   - `NEXT_PUBLIC_LIFF_ID` — LIFF ID จาก LINE Developers Console (สร้าง LIFF แล้วใส่ Endpoint URL เป็น `https://your-app.vercel.app`)
+
+3. **เก็บข้อมูลแบบถาวร (แนะนำ)**  
+   บน Vercel ระบบไฟล์ไม่ persist จึงต้องใช้ Vercel KV:
+   - ใน Vercel Dashboard ไปที่ **Storage** → **Create Database** → เลือก **KV**
+   - หลังสร้างแล้วกด **Connect to Project** เลือกโปรเจกต์นี้  
+   - Vercel จะใส่ `KV_REST_API_URL` และ `KV_REST_API_TOKEN` ให้อัตโนมัติ
+
+4. **Deploy** — กด Deploy โปรเจกต์ หลัง deploy เสร็จให้ไปอัปเดต LIFF Endpoint URL ใน LINE Developers Console เป็น URL ของ Vercel จริง (เช่น `https://xxx.vercel.app`)
+
+**หมายเหตุ:** รัน local ไม่ต้องตั้งค่า KV จะใช้ไฟล์ในโฟลเดอร์ `data/` แทน

@@ -1,0 +1,29 @@
+/** บทบาทผู้ใช้ */
+export type RoleKey =
+  | "mp_constituency"   // ผู้สมัคร สส. เขต
+  | "mp_list"           // ผู้สมัคร สส. บัญชีรายชื่อ
+  | "provincial_team"   // ทีมจังหวัด
+  // | "party_center";     // ส่วนกลางพรรค
+
+export const ROLE_LABELS: Record<RoleKey, string> = {
+  mp_constituency: "ผู้สมัคร สส. เขต",
+  mp_list: "ผู้สมัคร สส. บัญชีรายชื่อ",
+  provincial_team: "ทีมจังหวัด",
+  // party_center: "ส่วนกลางพรรค",
+};
+
+export type RegistrationPayload = {
+  lineUserId: string;
+  lineDisplayName?: string;
+  fullName: string;
+  role: RoleKey;
+  /** สำหรับ สส.เขต */
+  provinceId?: string;
+  districtId?: string;
+  /** สำหรับ ทีมจังหวัด: รหัสจังหวัด */
+  province?: string;
+  /** กลุ่มที่อยู่ ในงานสัมมนา 1-30 */
+  groupNumber: number;
+  createdAt: string;
+  updatedAt?: string;
+};

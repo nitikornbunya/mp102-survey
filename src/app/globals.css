@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #faf9f7;
   --foreground: #171717;
+  --ci-orange: #ff6a13;
+  --ci-orange-hover: #e55f10;
+  --surface: #ffffff;
+  --border: #e7e5e2;
+  --muted: #78716c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-ci: var(--ci-orange);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-prompt), sans-serif;
+}
+
+/* ปุ่มและ input โฟกัสเนียนขึ้น */
+input:focus, textarea:focus, button:focus-visible {
+  outline: none;
+}
+button:active:not(:disabled) {
+  transform: scale(0.98);
 }

@@ -1,64 +1,126 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import FeedbackForm from "./components/FeedbackForm";
+import LineLoginGate from "./components/LineLoginGate";
+import { useLineLiff } from "./context/LineLiffContext";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const { isLoggedIn, profile, logout } = useLineLiff();
+  const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    }
+    if (menuOpen) {
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, [menuOpen]);
+
+  const handleEditProfile = () => {
+    setMenuOpen(false);
+    router.push("/?editProfile=1");
+  };
+
+  const handleLogout = () => {
+    setMenuOpen(false);
+    logout();
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-[#faf9f7]">
+      {/* แถบหัวสีส้ม */}
+      <header className="bg-[#ff6a13] px-4 py-4 text-white shadow-md sm:px-6">
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-4">
+          <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
+            ระบบรับฟังความคิดเห็น MP102
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+          {isLoggedIn && profile && (
+            <div className="relative" ref={menuRef}>
+              <button
+                type="button"
+                onClick={() => setMenuOpen((o) => !o)}
+                className="flex items-center gap-2 rounded-lg p-1.5 transition hover:bg-white/20"
+                aria-expanded={menuOpen}
+                aria-haspopup="true"
+              >
+                {profile.pictureUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={profile.pictureUrl}
+                    alt=""
+                    className="h-8 w-8 rounded-full border border-white/60 object-cover shadow-sm"
+                  />
+                ) : (
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/60 bg-white/20 text-xs font-semibold uppercase shadow-sm">
+                    {profile.displayName?.[0] ?? "?"}
+                  </div>
+                )}
+                <span className="sr-only">เมนู</span>
+                <svg
+                  className={`h-5 w-5 shrink-0 transition-transform ${menuOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+              {menuOpen && (
+                <div
+                  className="absolute right-0 top-full z-50 mt-1.5 min-w-[180px] rounded-xl border border-white/20 bg-white py-1.5 shadow-lg"
+                  role="menu"
+                >
+                  <div className="border-b border-zinc-100 px-4 py-2">
+                    <p className="truncate text-sm font-medium text-zinc-800">{profile.displayName}</p>
+                  </div>
+                  <button
+                    type="button"
+                    role="menuitem"
+                    onClick={() => router.push("/")}
+                    className="flex w-full px-4 py-2.5 text-left text-sm text-zinc-700 transition hover:bg-zinc-100"
+                  >
+                    ทำแบบสอบถาม
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitem"
+                    onClick={handleEditProfile}
+                    className="flex w-full px-4 py-2.5 text-left text-sm text-zinc-700 transition hover:bg-zinc-100"
+                  >
+                    แก้ไขโปรไฟล์
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitem"
+                    onClick={handleLogout}
+                    className="flex w-full px-4 py-2.5 text-left text-sm text-zinc-700 transition hover:bg-zinc-100"
+                  >
+                    ออกจากระบบ
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+      </header>
+
+      <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
+        <p className="mb-8 text-center text-zinc-600">
+          กรุณาตอบคำถามตามช่วงที่กำหนด สามารถย้อนกลับแก้ไขก่อนกดส่งได้ <br />
+          หมายเหตุ: ข้อมูลที่ท่านส่งเข้ามาจะถูกประมวลผลแบบไม่ระบุตัวตน และรายงานผลในภาพรวมโดยไม่เปิดเผยข้อมูลส่วนบุคคลของผู้ตอบแบบสอบถาม
+        </p>
+        <LineLoginGate>
+          <FeedbackForm />
+        </LineLoginGate>
       </main>
     </div>
   );
