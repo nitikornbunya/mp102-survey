@@ -1,16 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import { useLineLiff } from "@/app/context/LineLiffContext";
 import RegistrationForm from "./RegistrationForm";
 
-type Props = { children: React.ReactNode };
+type Props = { children: React.ReactNode; editProfile?: boolean };
 
-export default function LineLoginGate({ children }: Props) {
+export default function LineLoginGate({ children, editProfile = false }: Props) {
   const { isReady, isLoggedIn, profile, error, login, logout } = useLineLiff();
-  const searchParams = useSearchParams();
-  const editProfile = searchParams.get("editProfile") === "1";
   const [hasCompletedRegistration, setHasCompletedRegistration] = useState(false);
   const [loadingRegistration, setLoadingRegistration] = useState(true);
   const [registrationChecked, setRegistrationChecked] = useState(false);
