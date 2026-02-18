@@ -37,11 +37,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
    - `NEXT_PUBLIC_LIFF_ID` — LIFF ID จาก LINE Developers Console (สร้าง LIFF แล้วใส่ Endpoint URL เป็น `https://your-app.vercel.app`)
 
 3. **เก็บข้อมูลแบบถาวร (แนะนำ)**  
-   บน Vercel ระบบไฟล์ไม่ persist จึงต้องใช้ Vercel KV:
-   - ใน Vercel Dashboard ไปที่ **Storage** → **Create Database** → เลือก **KV**
-   - หลังสร้างแล้วกด **Connect to Project** เลือกโปรเจกต์นี้  
-   - Vercel จะใส่ `KV_REST_API_URL` และ `KV_REST_API_TOKEN` ให้อัตโนมัติ
+   บน Vercel ระบบไฟล์ไม่ persist จึงต้องใช้ Redis (Upstash):
+   - ใน Vercel Dashboard ไปที่ **Storage** → **Create Database** → เลือก **Redis** (Upstash)  
+   - หรือ **Vercel Marketplace** → ค้นหา "Upstash Redis" → Add แล้ว **Connect to Project**
+   - หลังเชื่อมโปรเจกต์ Vercel จะใส่ `UPSTASH_REDIS_REST_URL` และ `UPSTASH_REDIS_REST_TOKEN` ให้อัตโนมัติ
 
 4. **Deploy** — กด Deploy โปรเจกต์ หลัง deploy เสร็จให้ไปอัปเดต LIFF Endpoint URL ใน LINE Developers Console เป็น URL ของ Vercel จริง (เช่น `https://xxx.vercel.app`)
 
-**หมายเหตุ:** รัน local ไม่ต้องตั้งค่า KV จะใช้ไฟล์ในโฟลเดอร์ `data/` แทน
+**หมายเหตุ:** รัน local ไม่ต้องตั้งค่า Redis จะใช้ไฟล์ในโฟลเดอร์ `data/` แทน

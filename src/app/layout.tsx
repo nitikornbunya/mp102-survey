@@ -11,7 +11,7 @@ const prompt = Prompt({
 });
 
 export const metadata: Metadata = {
-  title: "ระบบรับฟังความคิดเห็น",
+  title: "ระบบรับฟังความคิดเห็น MP102",
   description: "แบบฟอร์มรับฟังความคิดเห็น ช่วงคำถามที่ 1 และช่วงคำถามที่ 2 ตาม 4 ฐาน",
 };
 

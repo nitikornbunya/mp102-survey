@@ -1,6 +1,6 @@
 /**
  * Storage layer: ใช้ไฟล์ในโฟลเดอร์ data เมื่อรัน local
- * ใช้ Vercel KV เมื่อ deploy บน Vercel (มี KV_REST_API_URL)
+ * ใช้ Upstash Redis เมื่อ deploy บน Vercel (มี UPSTASH_REDIS_REST_URL)
  */
 import { readFile, writeFile, mkdir } from "fs/promises";
 import path from "path";
@@ -11,11 +11,11 @@ const DATA_DIR = path.join(process.cwd(), "data");
 const FEEDBACK_FILE = path.join(DATA_DIR, "feedback.json");
 const REG_FILE = path.join(DATA_DIR, "registrations.json");
 
-const KV_FEEDBACK_KEY = "mp-pple:feedback";
-const KV_REG_KEY = "mp-pple:registrations";
+const REDIS_FEEDBACK_KEY = "mp-pple:feedback";
+const REDIS_REG_KEY = "mp-pple:registrations";
 
-function useKv(): boolean {
-  return typeof process.env.KV_REST_API_URL === "string" && process.env.KV_REST_API_URL.length > 0;
+function useRedis(): boolean {
+  return typeof process.env.UPSTASH_REDIS_REST_URL === "string" && process.env.UPSTASH_REDIS_REST_URL.length > 0;
 }
 
 async function ensureDataDir() {
@@ -29,9 +29,10 @@ async function ensureDataDir() {
 // --- Feedback ---
 
 export async function getFeedbackList(): Promise<FeedbackPayload[]> {
-  if (useKv()) {
-    const { kv } = await import("@vercel/kv");
-    const raw = await kv.get<string>(KV_FEEDBACK_KEY);
+  if (useRedis()) {
+    const { Redis } = await import("@upstash/redis");
+    const redis = Redis.fromEnv();
+    const raw = await redis.get<string>(REDIS_FEEDBACK_KEY);
     if (raw == null) return [];
     try {
       const data = typeof raw === "string" ? JSON.parse(raw) : raw;
@@ -51,9 +52,10 @@ export async function getFeedbackList(): Promise<FeedbackPayload[]> {
 }
 
 export async function setFeedbackList(list: FeedbackPayload[]): Promise<void> {
-  if (useKv()) {
-    const { kv } = await import("@vercel/kv");
-    await kv.set(KV_FEEDBACK_KEY, JSON.stringify(list));
+  if (useRedis()) {
+    const { Redis } = await import("@upstash/redis");
+    const redis = Redis.fromEnv();
+    await redis.set(REDIS_FEEDBACK_KEY, JSON.stringify(list));
     return;
   }
   await ensureDataDir();
@@ -63,9 +65,10 @@ export async function setFeedbackList(list: FeedbackPayload[]): Promise<void> {
 // --- Registrations ---
 
 export async function getRegistrationList(): Promise<RegistrationPayload[]> {
-  if (useKv()) {
-    const { kv } = await import("@vercel/kv");
-    const raw = await kv.get<string>(KV_REG_KEY);
+  if (useRedis()) {
+    const { Redis } = await import("@upstash/redis");
+    const redis = Redis.fromEnv();
+    const raw = await redis.get<string>(REDIS_REG_KEY);
     if (raw == null) return [];
     try {
       const data = typeof raw === "string" ? JSON.parse(raw) : raw;
@@ -85,9 +88,10 @@ export async function getRegistrationList(): Promise<RegistrationPayload[]> {
 }
 
 export async function setRegistrationList(list: RegistrationPayload[]): Promise<void> {
-  if (useKv()) {
-    const { kv } = await import("@vercel/kv");
-    await kv.set(KV_REG_KEY, JSON.stringify(list));
+  if (useRedis()) {
+    const { Redis } = await import("@upstash/redis");
+    const redis = Redis.fromEnv();
+    await redis.set(REDIS_REG_KEY, JSON.stringify(list));
     return;
   }
   await ensureDataDir();
