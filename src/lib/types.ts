@@ -18,6 +18,7 @@ export type Phase2Answers = {
 export type FeedbackPayload = {
   id?: string;
   createdAt: string;
+  updatedAt?: string;
   phase1: Phase1Answers;
   phase2: Phase2Answers;
   /** ผูกกับ LINE สำหรับ login และโหลด/แก้ไขภายหลัง */

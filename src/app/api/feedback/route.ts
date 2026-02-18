@@ -95,7 +95,7 @@ export async function PATCH(request: Request) {
         ...phase2,
       };
     }
-    (current as FeedbackPayload & { updatedAt?: string }).updatedAt = new Date().toISOString();
+    current.updatedAt = new Date().toISOString();
 
     await setFeedbackList(list);
     return NextResponse.json({ ok: true });
