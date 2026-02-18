@@ -29,19 +29,52 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy บน Cloudflare Pages
 
-1. **Push โปรเจกต์ไปที่ Git** (GitHub / GitLab / Bitbucket) แล้วเชื่อมกับ [Vercel](https://vercel.com/new).
+โปรเจกต์ใช้ [OpenNext for Cloudflare](https://opennext.js.org/cloudflare) เพื่อ build Next.js ให้รันบน Cloudflare Workers/Pages
 
-2. **ตั้งค่า Environment Variables** ใน Vercel Dashboard (Settings → Environment Variables):
-   - `NEXT_PUBLIC_LIFF_ID` — LIFF ID จาก LINE Developers Console (สร้าง LIFF แล้วใส่ Endpoint URL เป็น `https://your-app.vercel.app`)
+### 1. ติดตั้ง dependencies
 
-3. **เก็บข้อมูลแบบถาวร (แนะนำ)**  
-   บน Vercel ระบบไฟล์ไม่ persist จึงต้องใช้ Redis (Upstash):
-   - ใน Vercel Dashboard ไปที่ **Storage** → **Create Database** → เลือก **Redis** (Upstash)  
-   - หรือ **Vercel Marketplace** → ค้นหา "Upstash Redis" → Add แล้ว **Connect to Project**
-   - หลังเชื่อมโปรเจกต์ Vercel จะใส่ `UPSTASH_REDIS_REST_URL` และ `UPSTASH_REDIS_REST_TOKEN` ให้อัตโนมัติ
+```bash
+npm install
+```
 
-4. **Deploy** — กด Deploy โปรเจกต์ หลัง deploy เสร็จให้ไปอัปเดต LIFF Endpoint URL ใน LINE Developers Console เป็น URL ของ Vercel จริง (เช่น `https://xxx.vercel.app`)
+(ต้องใช้ Node.js 20.9.0 ขึ้นไป)
 
-**หมายเหตุ:** รัน local ไม่ต้องตั้งค่า Redis จะใช้ไฟล์ในโฟลเดอร์ `data/` แทน
+### 2. ตั้งค่า Environment Variables
+
+บน **Cloudflare Dashboard** → โปรเจกต์ → **Settings** → **Variables and Secrets**:
+
+| ตัวแปร | ความหมาย |
+|--------|----------|
+| `NEXT_PUBLIC_LIFF_ID` | LIFF ID จาก LINE Developers Console |
+| `UPSTASH_REDIS_REST_URL` | URL ของ Upstash Redis (ต้องมีบน Cloudflare เพราะไม่มีระบบไฟล์) |
+| `UPSTASH_REDIS_REST_TOKEN` | Token ของ Upstash Redis |
+
+สร้าง Redis ที่ [Upstash Console](https://console.upstash.com/) แล้ว copy ค่ามาใส่
+
+### 3. Deploy
+
+**แบบเชื่อม Git (แนะนำ)**
+
+- ใน [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Connect to Git**
+- เลือก repo แล้วตั้งค่า:
+  - **Build command:** `npx opennextjs-cloudflare build` (จะรัน `next build` ให้อัตโนมัติ)
+  - **Root directory:** เว้นว่าง
+  - ใส่ Environment Variables ตามข้อ 2
+
+หรือใช้ [คำแนะนำจาก OpenNext Cloudflare](https://opennext.js.org/cloudflare/get-started) สำหรับการตั้งค่าเพิ่มเติม
+
+**แบบ deploy จากเครื่อง**
+
+```bash
+npm run deploy
+```
+
+(ต้อง login ด้วย `npx wrangler login` ก่อน)
+
+### 4. หลัง deploy
+
+ไปที่ LINE Developers Console → LIFF → แก้ Endpoint URL เป็น URL ของ Cloudflare (เช่น `https://mp-pple-workshop.pages.dev` หรือโดเมนที่ตั้งไว้)
+
+**หมายเหตุ:** รัน local (`npm run dev`) ใช้ไฟล์ในโฟลเดอร์ `data/` ได้ ไม่ต้องตั้ง Redis
