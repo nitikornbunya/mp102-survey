@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useLineLiff } from "@/app/context/LineLiffContext";
+import { apiUrl } from "@/lib/api";
 import { phase1Questions, phase2Bases } from "@/lib/questions";
 import type { Phase1Answers, Phase2Answers, BaseAnswers, FeedbackPayload } from "@/lib/types";
 
@@ -68,7 +69,7 @@ export default function FeedbackForm() {
       return;
     }
     setLoading(true);
-    fetch(`/api/feedback?lineUserId=${encodeURIComponent(profile.userId)}`)
+    fetch(apiUrl(`/api/feedback?lineUserId=${encodeURIComponent(profile.userId)}`))
       .then((res) => (res.status === 200 ? res.json() : null))
       .then((data: FeedbackPayload | null) => {
         if (data?.id) {
@@ -89,7 +90,7 @@ export default function FeedbackForm() {
     setError(null);
     try {
       if (feedbackId) {
-        const res = await fetch("/api/feedback", {
+        const res = await fetch(apiUrl("/api/feedback"), {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ id: feedbackId, lineUserId: profile.userId, phase1 }),
@@ -97,7 +98,7 @@ export default function FeedbackForm() {
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || "อัปเดตไม่สำเร็จ");
       } else {
-        const res = await fetch("/api/feedback", {
+        const res = await fetch(apiUrl("/api/feedback"), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -126,7 +127,7 @@ export default function FeedbackForm() {
     setSubmittingBase(baseId);
     setError(null);
     try {
-      const res = await fetch("/api/feedback", {
+      const res = await fetch(apiUrl("/api/feedback"), {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

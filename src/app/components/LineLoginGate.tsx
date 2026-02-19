@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useLineLiff } from "@/app/context/LineLiffContext";
+import { apiUrl } from "@/lib/api";
 import RegistrationForm from "./RegistrationForm";
 
 type Props = { children: React.ReactNode; editProfile?: boolean };
@@ -19,7 +20,7 @@ export default function LineLoginGate({ children, editProfile = false }: Props) 
       return;
     }
     setLoadingRegistration(true);
-    fetch(`/api/registration?lineUserId=${encodeURIComponent(profile.userId)}`)
+    fetch(apiUrl(`/api/registration?lineUserId=${encodeURIComponent(profile.userId)}`))
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
         setHasCompletedRegistration(!!data);

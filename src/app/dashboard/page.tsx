@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
+import { apiUrl } from "@/lib/api";
 import { phase1Questions, phase2Bases } from "@/lib/questions";
 import type { FeedbackPayload } from "@/lib/types";
 import type { RegistrationPayload } from "@/lib/registration-types";
@@ -20,7 +21,7 @@ export default function DashboardPage() {
   const [filterGroup, setFilterGroup] = useState<string>("all");
 
   useEffect(() => {
-    Promise.all([fetch("/api/feedback").then((r) => r.json()), fetch("/api/registration").then((r) => r.json())])
+    Promise.all([fetch(apiUrl("/api/feedback")).then((r) => r.json()), fetch(apiUrl("/api/registration")).then((r) => r.json())])
       .then(([feedbackData, regData]) => {
         setList(Array.isArray(feedbackData) ? feedbackData : []);
         setRegistrations(Array.isArray(regData) ? regData : []);

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import type { LineProfile } from "@/app/context/LineLiffContext";
+import { apiUrl } from "@/lib/api";
 import { ROLE_LABELS, type RoleKey } from "@/lib/registration-types";
 import { MOCK_PROVINCES, MOCK_DISTRICTS_BY_PROVINCE } from "@/lib/mock-provinces";
 
@@ -52,7 +53,7 @@ export default function RegistrationForm({ profile, onSuccess }: Props) {
     setSubmitting(true);
     setError(null);
     try {
-      const res = await fetch("/api/registration", {
+      const res = await fetch(apiUrl("/api/registration"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
