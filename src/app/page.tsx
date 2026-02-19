@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import HomeClient from "./HomeClient";
 
+export const runtime = "edge";
+
 function getEditProfile(value: string | string[] | undefined): boolean {
   if (value === undefined) return false;
   const v = Array.isArray(value) ? value[0] : value;
