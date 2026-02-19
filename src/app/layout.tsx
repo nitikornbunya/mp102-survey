@@ -3,8 +3,6 @@ import { Prompt } from "next/font/google";
 import { LineLiffProvider } from "@/app/context/LineLiffContext";
 import "./globals.css";
 
-export const runtime = "edge";
-
 const prompt = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin", "thai"],

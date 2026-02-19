@@ -1,18 +1,7 @@
 import { Suspense } from "react";
-import HomeClient from "./HomeClient";
+import HomeWithParams from "./HomeWithParams";
 
-export const runtime = "edge";
-
-function getEditProfile(value: string | string[] | undefined): boolean {
-  if (value === undefined) return false;
-  const v = Array.isArray(value) ? value[0] : value;
-  return v === "1";
-}
-
-type SearchParams = { [key: string]: string | string[] | undefined };
-type PageProps = {
-  searchParams: Promise<SearchParams> | SearchParams;
-};
+export const dynamic = "force-static";
 
 function HomeFallback() {
   return (
@@ -23,12 +12,10 @@ function HomeFallback() {
   );
 }
 
-export default async function Home({ searchParams }: PageProps) {
-  const params = await Promise.resolve(searchParams);
-  const editProfile = getEditProfile(params.editProfile);
+export default function Home() {
   return (
     <Suspense fallback={<HomeFallback />}>
-      <HomeClient editProfile={editProfile} />
+      <HomeWithParams />
     </Suspense>
   );
 }
