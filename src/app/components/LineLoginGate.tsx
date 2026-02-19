@@ -5,9 +5,18 @@ import { useLineLiff } from "@/app/context/LineLiffContext";
 import { apiUrl } from "@/lib/api";
 import RegistrationForm from "./RegistrationForm";
 
-type Props = { children: React.ReactNode; editProfile?: boolean };
+type Props = {
+  children: React.ReactNode;
+  editProfile?: boolean;
+  /** ถ้า false จะไม่บังคับลงทะเบียน แค่ต้อง Login ด้วย LINE (ใช้กับ Dashboard) */
+  requireRegistration?: boolean;
+};
 
-export default function LineLoginGate({ children, editProfile = false }: Props) {
+export default function LineLoginGate({
+  children,
+  editProfile = false,
+  requireRegistration = true,
+}: Props) {
   const { isReady, isLoggedIn, profile, error, login, logout } = useLineLiff();
   const [hasCompletedRegistration, setHasCompletedRegistration] = useState(false);
   const [loadingRegistration, setLoadingRegistration] = useState(true);
@@ -80,8 +89,13 @@ export default function LineLoginGate({ children, editProfile = false }: Props) 
     );
   }
 
-  // Login แล้ว แต่ยังไม่ลงทะเบียน หรือกดแก้ไขโปรไฟล์
-  if (registrationChecked && !loadingRegistration && (!hasCompletedRegistration || editProfile)) {
+  // Login แล้ว แต่ยังไม่ลงทะเบียน หรือกดแก้ไขโปรไฟล์ (ข้ามถ้าไม่บังคับลงทะเบียน เช่น Dashboard)
+  if (
+    requireRegistration &&
+    registrationChecked &&
+    !loadingRegistration &&
+    (!hasCompletedRegistration || editProfile)
+  ) {
     return (
       <div className="space-y-6">
         <RegistrationForm profile={profile} onSuccess={() => setHasCompletedRegistration(true)} />

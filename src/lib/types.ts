@@ -24,5 +24,7 @@ export type FeedbackPayload = {
   /** ผูกกับ LINE สำหรับ login และโหลด/แก้ไขภายหลัง */
   lineUserId?: string;
   lineDisplayName?: string;
+  /** กลุ่ม (จาก API feedback?all=true) ใช้สำหรับ filter ใน Dashboard */
+  groupNumber?: number;
   meta?: { area?: string; name?: string };
 };

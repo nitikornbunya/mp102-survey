@@ -1,52 +1,35 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { apiUrl } from "@/lib/api";
 import { phase1Questions, phase2Bases } from "@/lib/questions";
 import type { FeedbackPayload } from "@/lib/types";
-import type { RegistrationPayload } from "@/lib/registration-types";
+import LineLoginGate from "@/app/components/LineLoginGate";
 
 type TabId = "phase1" | "phase2";
 
 export default function DashboardPage() {
   const [tab, setTab] = useState<TabId>("phase1");
   const [list, setList] = useState<FeedbackPayload[]>([]);
-  const [registrations, setRegistrations] = useState<RegistrationPayload[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Filter ช่วงคำถามที่ 2
   const [filterBase, setFilterBase] = useState<string>("all");
   const [filterGroup, setFilterGroup] = useState<string>("all");
 
+  const listForPhase2 =
+    filterGroup === "all"
+      ? list
+      : list.filter((item) => item.groupNumber === Number(filterGroup));
+
   useEffect(() => {
-    Promise.all([
-      fetch("/api/dashboard/feedback").then((r) => r.json()),
-      fetch("/api/dashboard/registrations").then((r) => r.json()),
-    ])
-      .then(([feedbackData, regData]) => {
-        setList(Array.isArray(feedbackData) ? feedbackData : []);
-        setRegistrations(Array.isArray(regData) ? regData : []);
-      })
+    fetch(apiUrl("/api/feedback?all=true"))
+      .then((r) => r.json())
+      .then((data) => setList(Array.isArray(data) ? data : []))
       .catch(() => setError("โหลดข้อมูลไม่สำเร็จ"))
       .finally(() => setLoading(false));
   }, []);
-
-  const lineUserIdToGroup = useMemo(() => {
-    const map: Record<string, number> = {};
-    registrations.forEach((r) => {
-      map[r.lineUserId] = r.groupNumber;
-    });
-    return map;
-  }, [registrations]);
-
-  const filteredListForPhase2 = useMemo(() => {
-    if (filterGroup === "all") return list;
-    const g = Number(filterGroup);
-    if (!Number.isInteger(g) || g < 1 || g > 30) return list;
-    return list.filter((item) => item.lineUserId && lineUserIdToGroup[item.lineUserId] === g);
-  }, [list, filterGroup, lineUserIdToGroup]);
 
   if (loading) {
     return (
@@ -66,7 +49,8 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#faf9f7]">
+    <LineLoginGate requireRegistration={false}>
+      <div className="min-h-screen bg-[#faf9f7]">
       <header className="border-b border-[#e7e5e2] bg-white shadow-sm">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-4 sm:px-6">
           <h1 className="text-xl font-bold text-zinc-800 sm:text-2xl">Dashboard</h1>
@@ -126,7 +110,7 @@ export default function DashboardPage() {
           <Phase1View list={list} />
         ) : (
           <Phase2View
-            list={filteredListForPhase2}
+            list={listForPhase2}
             filterBase={filterBase}
             filterGroup={filterGroup}
             onFilterBase={setFilterBase}
@@ -135,6 +119,7 @@ export default function DashboardPage() {
         )}
       </div>
     </div>
+    </LineLoginGate>
   );
 }
 
@@ -185,7 +170,6 @@ function Phase2View({
 
   return (
     <div className="space-y-6">
-      {/* Filters */}
       <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-[#e7e5e2] bg-white p-4 shadow-sm">
         <div className="flex items-center gap-2">
           <label className="text-sm font-medium text-zinc-600">ฐาน:</label>
@@ -203,7 +187,7 @@ function Phase2View({
           </select>
         </div>
         <div className="flex items-center gap-2">
-          <label className="text-sm font-medium text-zinc-600">กลุ่ม:</label>
+          <label className="text-sm font-medium text-zinc-600">กลุ่มที่:</label>
           <select
             value={filterGroup}
             onChange={(e) => onFilterGroup(e.target.value)}
