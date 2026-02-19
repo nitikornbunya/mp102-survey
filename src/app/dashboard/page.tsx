@@ -21,7 +21,10 @@ export default function DashboardPage() {
   const [filterGroup, setFilterGroup] = useState<string>("all");
 
   useEffect(() => {
-    Promise.all([fetch(apiUrl("/api/feedback")).then((r) => r.json()), fetch(apiUrl("/api/registration")).then((r) => r.json())])
+    Promise.all([
+      fetch("/api/dashboard/feedback").then((r) => r.json()),
+      fetch("/api/dashboard/registrations").then((r) => r.json()),
+    ])
       .then(([feedbackData, regData]) => {
         setList(Array.isArray(feedbackData) ? feedbackData : []);
         setRegistrations(Array.isArray(regData) ? regData : []);

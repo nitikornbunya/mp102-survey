@@ -1,0 +1,3270 @@
+{
+    "provinces": [
+      {
+        "province": "กระบี่",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtCount": 33,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ]
+      },
+      {
+        "province": "กาญจนบุรี",
+        "districtCount": 5,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "province": "กาฬสินธุ์",
+        "districtCount": 6,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "province": "กำแพงเพชร",
+        "districtCount": 4,
+        "districts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtCount": 11,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "province": "จันทบุรี",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "ฉะเชิงเทรา",
+        "districtCount": 4,
+        "districts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "province": "ชลบุรี",
+        "districtCount": 10,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "province": "ชัยนาท",
+        "districtCount": 2,
+        "districts": [
+          1,
+          2
+        ]
+      },
+      {
+        "province": "ชัยภูมิ",
+        "districtCount": 7,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "province": "ชุมพร",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "ตรัง",
+        "districtCount": 4,
+        "districts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "province": "ตราด",
+        "districtCount": 1,
+        "districts": [
+          1
+        ]
+      },
+      {
+        "province": "ตาก",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "นครนายก",
+        "districtCount": 2,
+        "districts": [
+          1,
+          2
+        ]
+      },
+      {
+        "province": "นครปฐม",
+        "districtCount": 6,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "province": "นครพนม",
+        "districtCount": 4,
+        "districts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtCount": 16,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      {
+        "province": "นครศรีธรรมราช",
+        "districtCount": 9,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "province": "นครสวรรค์",
+        "districtCount": 6,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "province": "นนทบุรี",
+        "districtCount": 8,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "province": "นราธิวาส",
+        "districtCount": 5,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "province": "น่าน",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "บึงกาฬ",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "บุรีรัมย์",
+        "districtCount": 10,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "province": "ปทุมธานี",
+        "districtCount": 8,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "province": "ประจวบคีรีขันธ์",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "ปราจีนบุรี",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "ปัตตานี",
+        "districtCount": 5,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "province": "พระนครศรีอยุธยา",
+        "districtCount": 5,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "province": "พะเยา",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "พังงา",
+        "districtCount": 2,
+        "districts": [
+          1,
+          2
+        ]
+      },
+      {
+        "province": "พัทลุง",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "พิจิตร",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "พิษณุโลก",
+        "districtCount": 5,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "province": "ภูเก็ต",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "มหาสารคาม",
+        "districtCount": 6,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "province": "มุกดาหาร",
+        "districtCount": 2,
+        "districts": [
+          1,
+          2
+        ]
+      },
+      {
+        "province": "ยะลา",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "ยโสธร",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "ระนอง",
+        "districtCount": 1,
+        "districts": [
+          1
+        ]
+      },
+      {
+        "province": "ระยอง",
+        "districtCount": 5,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "province": "ราชบุรี",
+        "districtCount": 5,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "province": "ร้อยเอ็ด",
+        "districtCount": 8,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "province": "ลพบุรี",
+        "districtCount": 4,
+        "districts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "province": "ลำปาง",
+        "districtCount": 4,
+        "districts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "province": "ลำพูน",
+        "districtCount": 2,
+        "districts": [
+          1,
+          2
+        ]
+      },
+      {
+        "province": "ศรีสะเกษ",
+        "districtCount": 9,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "province": "สกลนคร",
+        "districtCount": 7,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "province": "สงขลา",
+        "districtCount": 9,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "province": "สตูล",
+        "districtCount": 2,
+        "districts": [
+          1,
+          2
+        ]
+      },
+      {
+        "province": "สมุทรปราการ",
+        "districtCount": 8,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "province": "สมุทรสงคราม",
+        "districtCount": 1,
+        "districts": [
+          1
+        ]
+      },
+      {
+        "province": "สมุทรสาคร",
+        "districtCount":4,
+        "districts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "province": "สระบุรี",
+        "districtCount": 4,
+        "districts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "province": "สระแก้ว",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "สิงห์บุรี",
+        "districtCount": 1,
+        "districts": [
+          1
+        ]
+      },
+      {
+        "province": "สุพรรณบุรี",
+        "districtCount": 5,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "province": "สุราษฎร์ธานี",
+        "districtCount": 7,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "province": "สุรินทร์",
+        "districtCount": 8,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "province": "สุโขทัย",
+        "districtCount": 4,
+        "districts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "province": "หนองคาย",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "หนองบัวลำภู",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "อำนาจเจริญ",
+        "districtCount": 2,
+        "districts": [
+          1,
+          2
+        ]
+      },
+      {
+        "province": "อุดรธานี",
+        "districtCount": 10,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "province": "อุตรดิตถ์",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "อุทัยธานี",
+        "districtCount": 2,
+        "districts": [
+          1,
+          2
+        ]
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtCount": 11,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "province": "อ่างทอง",
+        "districtCount": 2,
+        "districts": [
+          1,
+          2
+        ]
+      },
+      {
+        "province": "เชียงราย",
+        "districtCount": 7,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "province": "เชียงใหม่",
+        "districtCount": 10,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "province": "เพชรบุรี",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "เพชรบูรณ์",
+        "districtCount": 6,
+        "districts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "province": "เลย",
+        "districtCount": 4,
+        "districts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "province": "แพร่",
+        "districtCount": 3,
+        "districts": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "province": "แม่ฮ่องสอน",
+        "districtCount": 2,
+        "districts": [
+          1,
+          2
+        ]
+      }
+    ],
+    "allDistricts": [
+      {
+        "province": "กระบี่",
+        "districtNumber": 1,
+        "displayName": "กระบี่ เขต 1",
+        "key": "กระบี่-1"
+      },
+      {
+        "province": "กระบี่",
+        "districtNumber": 2,
+        "displayName": "กระบี่ เขต 2",
+        "key": "กระบี่-2"
+      },
+      {
+        "province": "กระบี่",
+        "districtNumber": 3,
+        "displayName": "กระบี่ เขต 3",
+        "key": "กระบี่-3"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 1,
+        "displayName": "กรุงเทพมหานคร เขต 1",
+        "key": "กรุงเทพมหานคร-1"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 2,
+        "displayName": "กรุงเทพมหานคร เขต 2",
+        "key": "กรุงเทพมหานคร-2"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 3,
+        "displayName": "กรุงเทพมหานคร เขต 3",
+        "key": "กรุงเทพมหานคร-3"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 4,
+        "displayName": "กรุงเทพมหานคร เขต 4",
+        "key": "กรุงเทพมหานคร-4"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 5,
+        "displayName": "กรุงเทพมหานคร เขต 5",
+        "key": "กรุงเทพมหานคร-5"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 6,
+        "displayName": "กรุงเทพมหานคร เขต 6",
+        "key": "กรุงเทพมหานคร-6"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 7,
+        "displayName": "กรุงเทพมหานคร เขต 7",
+        "key": "กรุงเทพมหานคร-7"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 8,
+        "displayName": "กรุงเทพมหานคร เขต 8",
+        "key": "กรุงเทพมหานคร-8"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 9,
+        "displayName": "กรุงเทพมหานคร เขต 9",
+        "key": "กรุงเทพมหานคร-9"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 10,
+        "displayName": "กรุงเทพมหานคร เขต 10",
+        "key": "กรุงเทพมหานคร-10"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 11,
+        "displayName": "กรุงเทพมหานคร เขต 11",
+        "key": "กรุงเทพมหานคร-11"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 12,
+        "displayName": "กรุงเทพมหานคร เขต 12",
+        "key": "กรุงเทพมหานคร-12"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 13,
+        "displayName": "กรุงเทพมหานคร เขต 13",
+        "key": "กรุงเทพมหานคร-13"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 14,
+        "displayName": "กรุงเทพมหานคร เขต 14",
+        "key": "กรุงเทพมหานคร-14"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 15,
+        "displayName": "กรุงเทพมหานคร เขต 15",
+        "key": "กรุงเทพมหานคร-15"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 16,
+        "displayName": "กรุงเทพมหานคร เขต 16",
+        "key": "กรุงเทพมหานคร-16"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 17,
+        "displayName": "กรุงเทพมหานคร เขต 17",
+        "key": "กรุงเทพมหานคร-17"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 18,
+        "displayName": "กรุงเทพมหานคร เขต 18",
+        "key": "กรุงเทพมหานคร-18"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 19,
+        "displayName": "กรุงเทพมหานคร เขต 19",
+        "key": "กรุงเทพมหานคร-19"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 20,
+        "displayName": "กรุงเทพมหานคร เขต 20",
+        "key": "กรุงเทพมหานคร-20"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 21,
+        "displayName": "กรุงเทพมหานคร เขต 21",
+        "key": "กรุงเทพมหานคร-21"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 22,
+        "displayName": "กรุงเทพมหานคร เขต 22",
+        "key": "กรุงเทพมหานคร-22"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 23,
+        "displayName": "กรุงเทพมหานคร เขต 23",
+        "key": "กรุงเทพมหานคร-23"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 24,
+        "displayName": "กรุงเทพมหานคร เขต 24",
+        "key": "กรุงเทพมหานคร-24"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 25,
+        "displayName": "กรุงเทพมหานคร เขต 25",
+        "key": "กรุงเทพมหานคร-25"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 26,
+        "displayName": "กรุงเทพมหานคร เขต 26",
+        "key": "กรุงเทพมหานคร-26"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 27,
+        "displayName": "กรุงเทพมหานคร เขต 27",
+        "key": "กรุงเทพมหานคร-27"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 28,
+        "displayName": "กรุงเทพมหานคร เขต 28",
+        "key": "กรุงเทพมหานคร-28"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 29,
+        "displayName": "กรุงเทพมหานคร เขต 29",
+        "key": "กรุงเทพมหานคร-29"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 30,
+        "displayName": "กรุงเทพมหานคร เขต 30",
+        "key": "กรุงเทพมหานคร-30"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 31,
+        "displayName": "กรุงเทพมหานคร เขต 31",
+        "key": "กรุงเทพมหานคร-31"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 32,
+        "displayName": "กรุงเทพมหานคร เขต 32",
+        "key": "กรุงเทพมหานคร-32"
+      },
+      {
+        "province": "กรุงเทพมหานคร",
+        "districtNumber": 33,
+        "displayName": "กรุงเทพมหานคร เขต 33",
+        "key": "กรุงเทพมหานคร-33"
+      },
+      {
+        "province": "กาญจนบุรี",
+        "districtNumber": 1,
+        "displayName": "กาญจนบุรี เขต 1",
+        "key": "กาญจนบุรี-1"
+      },
+      {
+        "province": "กาญจนบุรี",
+        "districtNumber": 2,
+        "displayName": "กาญจนบุรี เขต 2",
+        "key": "กาญจนบุรี-2"
+      },
+      {
+        "province": "กาญจนบุรี",
+        "districtNumber": 3,
+        "displayName": "กาญจนบุรี เขต 3",
+        "key": "กาญจนบุรี-3"
+      },
+      {
+        "province": "กาญจนบุรี",
+        "districtNumber": 4,
+        "displayName": "กาญจนบุรี เขต 4",
+        "key": "กาญจนบุรี-4"
+      },
+      {
+        "province": "กาญจนบุรี",
+        "districtNumber": 5,
+        "displayName": "กาญจนบุรี เขต 5",
+        "key": "กาญจนบุรี-5"
+      },
+      {
+        "province": "กาฬสินธุ์",
+        "districtNumber": 1,
+        "displayName": "กาฬสินธุ์ เขต 1",
+        "key": "กาฬสินธุ์-1"
+      },
+      {
+        "province": "กาฬสินธุ์",
+        "districtNumber": 2,
+        "displayName": "กาฬสินธุ์ เขต 2",
+        "key": "กาฬสินธุ์-2"
+      },
+      {
+        "province": "กาฬสินธุ์",
+        "districtNumber": 3,
+        "displayName": "กาฬสินธุ์ เขต 3",
+        "key": "กาฬสินธุ์-3"
+      },
+      {
+        "province": "กาฬสินธุ์",
+        "districtNumber": 4,
+        "displayName": "กาฬสินธุ์ เขต 4",
+        "key": "กาฬสินธุ์-4"
+      },
+      {
+        "province": "กาฬสินธุ์",
+        "districtNumber": 5,
+        "displayName": "กาฬสินธุ์ เขต 5",
+        "key": "กาฬสินธุ์-5"
+      },
+      {
+        "province": "กาฬสินธุ์",
+        "districtNumber": 6,
+        "displayName": "กาฬสินธุ์ เขต 6",
+        "key": "กาฬสินธุ์-6"
+      },
+      {
+        "province": "กำแพงเพชร",
+        "districtNumber": 1,
+        "displayName": "กำแพงเพชร เขต 1",
+        "key": "กำแพงเพชร-1"
+      },
+      {
+        "province": "กำแพงเพชร",
+        "districtNumber": 2,
+        "displayName": "กำแพงเพชร เขต 2",
+        "key": "กำแพงเพชร-2"
+      },
+      {
+        "province": "กำแพงเพชร",
+        "districtNumber": 3,
+        "displayName": "กำแพงเพชร เขต 3",
+        "key": "กำแพงเพชร-3"
+      },
+      {
+        "province": "กำแพงเพชร",
+        "districtNumber": 4,
+        "displayName": "กำแพงเพชร เขต 4",
+        "key": "กำแพงเพชร-4"
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtNumber": 1,
+        "displayName": "ขอนแก่น เขต 1",
+        "key": "ขอนแก่น-1"
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtNumber": 2,
+        "displayName": "ขอนแก่น เขต 2",
+        "key": "ขอนแก่น-2"
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtNumber": 3,
+        "displayName": "ขอนแก่น เขต 3",
+        "key": "ขอนแก่น-3"
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtNumber": 4,
+        "displayName": "ขอนแก่น เขต 4",
+        "key": "ขอนแก่น-4"
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtNumber": 5,
+        "displayName": "ขอนแก่น เขต 5",
+        "key": "ขอนแก่น-5"
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtNumber": 6,
+        "displayName": "ขอนแก่น เขต 6",
+        "key": "ขอนแก่น-6"
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtNumber": 7,
+        "displayName": "ขอนแก่น เขต 7",
+        "key": "ขอนแก่น-7"
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtNumber": 8,
+        "displayName": "ขอนแก่น เขต 8",
+        "key": "ขอนแก่น-8"
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtNumber": 9,
+        "displayName": "ขอนแก่น เขต 9",
+        "key": "ขอนแก่น-9"
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtNumber": 10,
+        "displayName": "ขอนแก่น เขต 10",
+        "key": "ขอนแก่น-10"
+      },
+      {
+        "province": "ขอนแก่น",
+        "districtNumber": 11,
+        "displayName": "ขอนแก่น เขต 11",
+        "key": "ขอนแก่น-11"
+      },
+      {
+        "province": "จันทบุรี",
+        "districtNumber": 1,
+        "displayName": "จันทบุรี เขต 1",
+        "key": "จันทบุรี-1"
+      },
+      {
+        "province": "จันทบุรี",
+        "districtNumber": 2,
+        "displayName": "จันทบุรี เขต 2",
+        "key": "จันทบุรี-2"
+      },
+      {
+        "province": "จันทบุรี",
+        "districtNumber": 3,
+        "displayName": "จันทบุรี เขต 3",
+        "key": "จันทบุรี-3"
+      },
+      {
+        "province": "ฉะเชิงเทรา",
+        "districtNumber": 1,
+        "displayName": "ฉะเชิงเทรา เขต 1",
+        "key": "ฉะเชิงเทรา-1"
+      },
+      {
+        "province": "ฉะเชิงเทรา",
+        "districtNumber": 2,
+        "displayName": "ฉะเชิงเทรา เขต 2",
+        "key": "ฉะเชิงเทรา-2"
+      },
+      {
+        "province": "ฉะเชิงเทรา",
+        "districtNumber": 3,
+        "displayName": "ฉะเชิงเทรา เขต 3",
+        "key": "ฉะเชิงเทรา-3"
+      },
+      {
+        "province": "ฉะเชิงเทรา",
+        "districtNumber": 4,
+        "displayName": "ฉะเชิงเทรา เขต 4",
+        "key": "ฉะเชิงเทรา-4"
+      },
+      {
+        "province": "ชลบุรี",
+        "districtNumber": 1,
+        "displayName": "ชลบุรี เขต 1",
+        "key": "ชลบุรี-1"
+      },
+      {
+        "province": "ชลบุรี",
+        "districtNumber": 2,
+        "displayName": "ชลบุรี เขต 2",
+        "key": "ชลบุรี-2"
+      },
+      {
+        "province": "ชลบุรี",
+        "districtNumber": 3,
+        "displayName": "ชลบุรี เขต 3",
+        "key": "ชลบุรี-3"
+      },
+      {
+        "province": "ชลบุรี",
+        "districtNumber": 4,
+        "displayName": "ชลบุรี เขต 4",
+        "key": "ชลบุรี-4"
+      },
+      {
+        "province": "ชลบุรี",
+        "districtNumber": 5,
+        "displayName": "ชลบุรี เขต 5",
+        "key": "ชลบุรี-5"
+      },
+      {
+        "province": "ชลบุรี",
+        "districtNumber": 6,
+        "displayName": "ชลบุรี เขต 6",
+        "key": "ชลบุรี-6"
+      },
+      {
+        "province": "ชลบุรี",
+        "districtNumber": 7,
+        "displayName": "ชลบุรี เขต 7",
+        "key": "ชลบุรี-7"
+      },
+      {
+        "province": "ชลบุรี",
+        "districtNumber": 8,
+        "displayName": "ชลบุรี เขต 8",
+        "key": "ชลบุรี-8"
+      },
+      {
+        "province": "ชลบุรี",
+        "districtNumber": 9,
+        "displayName": "ชลบุรี เขต 9",
+        "key": "ชลบุรี-9"
+      },
+      {
+        "province": "ชลบุรี",
+        "districtNumber": 10,
+        "displayName": "ชลบุรี เขต 10",
+        "key": "ชลบุรี-10"
+      },
+      {
+        "province": "ชัยนาท",
+        "districtNumber": 1,
+        "displayName": "ชัยนาท เขต 1",
+        "key": "ชัยนาท-1"
+      },
+      {
+        "province": "ชัยนาท",
+        "districtNumber": 2,
+        "displayName": "ชัยนาท เขต 2",
+        "key": "ชัยนาท-2"
+      },
+      {
+        "province": "ชัยภูมิ",
+        "districtNumber": 1,
+        "displayName": "ชัยภูมิ เขต 1",
+        "key": "ชัยภูมิ-1"
+      },
+      {
+        "province": "ชัยภูมิ",
+        "districtNumber": 2,
+        "displayName": "ชัยภูมิ เขต 2",
+        "key": "ชัยภูมิ-2"
+      },
+      {
+        "province": "ชัยภูมิ",
+        "districtNumber": 3,
+        "displayName": "ชัยภูมิ เขต 3",
+        "key": "ชัยภูมิ-3"
+      },
+      {
+        "province": "ชัยภูมิ",
+        "districtNumber": 4,
+        "displayName": "ชัยภูมิ เขต 4",
+        "key": "ชัยภูมิ-4"
+      },
+      {
+        "province": "ชัยภูมิ",
+        "districtNumber": 5,
+        "displayName": "ชัยภูมิ เขต 5",
+        "key": "ชัยภูมิ-5"
+      },
+      {
+        "province": "ชัยภูมิ",
+        "districtNumber": 6,
+        "displayName": "ชัยภูมิ เขต 6",
+        "key": "ชัยภูมิ-6"
+      },
+      {
+        "province": "ชัยภูมิ",
+        "districtNumber": 7,
+        "displayName": "ชัยภูมิ เขต 7",
+        "key": "ชัยภูมิ-7"
+      },
+      {
+        "province": "ชุมพร",
+        "districtNumber": 1,
+        "displayName": "ชุมพร เขต 1",
+        "key": "ชุมพร-1"
+      },
+      {
+        "province": "ชุมพร",
+        "districtNumber": 2,
+        "displayName": "ชุมพร เขต 2",
+        "key": "ชุมพร-2"
+      },
+      {
+        "province": "ชุมพร",
+        "districtNumber": 3,
+        "displayName": "ชุมพร เขต 3",
+        "key": "ชุมพร-3"
+      },
+      {
+        "province": "ตรัง",
+        "districtNumber": 1,
+        "displayName": "ตรัง เขต 1",
+        "key": "ตรัง-1"
+      },
+      {
+        "province": "ตรัง",
+        "districtNumber": 2,
+        "displayName": "ตรัง เขต 2",
+        "key": "ตรัง-2"
+      },
+      {
+        "province": "ตรัง",
+        "districtNumber": 3,
+        "displayName": "ตรัง เขต 3",
+        "key": "ตรัง-3"
+      },
+      {
+        "province": "ตรัง",
+        "districtNumber": 4,
+        "displayName": "ตรัง เขต 4",
+        "key": "ตรัง-4"
+      },
+      {
+        "province": "ตราด",
+        "districtNumber": 1,
+        "displayName": "ตราด เขต 1",
+        "key": "ตราด-1"
+      },
+      {
+        "province": "ตาก",
+        "districtNumber": 1,
+        "displayName": "ตาก เขต 1",
+        "key": "ตาก-1"
+      },
+      {
+        "province": "ตาก",
+        "districtNumber": 2,
+        "displayName": "ตาก เขต 2",
+        "key": "ตาก-2"
+      },
+      {
+        "province": "ตาก",
+        "districtNumber": 3,
+        "displayName": "ตาก เขต 3",
+        "key": "ตาก-3"
+      },
+      {
+        "province": "นครนายก",
+        "districtNumber": 1,
+        "displayName": "นครนายก เขต 1",
+        "key": "นครนายก-1"
+      },
+      {
+        "province": "นครนายก",
+        "districtNumber": 2,
+        "displayName": "นครนายก เขต 2",
+        "key": "นครนายก-2"
+      },
+      {
+        "province": "นครปฐม",
+        "districtNumber": 1,
+        "displayName": "นครปฐม เขต 1",
+        "key": "นครปฐม-1"
+      },
+      {
+        "province": "นครปฐม",
+        "districtNumber": 2,
+        "displayName": "นครปฐม เขต 2",
+        "key": "นครปฐม-2"
+      },
+      {
+        "province": "นครปฐม",
+        "districtNumber": 3,
+        "displayName": "นครปฐม เขต 3",
+        "key": "นครปฐม-3"
+      },
+      {
+        "province": "นครปฐม",
+        "districtNumber": 4,
+        "displayName": "นครปฐม เขต 4",
+        "key": "นครปฐม-4"
+      },
+      {
+        "province": "นครปฐม",
+        "districtNumber": 5,
+        "displayName": "นครปฐม เขต 5",
+        "key": "นครปฐม-5"
+      },
+      {
+        "province": "นครปฐม",
+        "districtNumber": 6,
+        "displayName": "นครปฐม เขต 6",
+        "key": "นครปฐม-6"
+      },
+      {
+        "province": "นครพนม",
+        "districtNumber": 1,
+        "displayName": "นครพนม เขต 1",
+        "key": "นครพนม-1"
+      },
+      {
+        "province": "นครพนม",
+        "districtNumber": 2,
+        "displayName": "นครพนม เขต 2",
+        "key": "นครพนม-2"
+      },
+      {
+        "province": "นครพนม",
+        "districtNumber": 3,
+        "displayName": "นครพนม เขต 3",
+        "key": "นครพนม-3"
+      },
+      {
+        "province": "นครพนม",
+        "districtNumber": 4,
+        "displayName": "นครพนม เขต 4",
+        "key": "นครพนม-4"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 1,
+        "displayName": "นครราชสีมา เขต 1",
+        "key": "นครราชสีมา-1"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 2,
+        "displayName": "นครราชสีมา เขต 2",
+        "key": "นครราชสีมา-2"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 3,
+        "displayName": "นครราชสีมา เขต 3",
+        "key": "นครราชสีมา-3"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 4,
+        "displayName": "นครราชสีมา เขต 4",
+        "key": "นครราชสีมา-4"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 5,
+        "displayName": "นครราชสีมา เขต 5",
+        "key": "นครราชสีมา-5"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 6,
+        "displayName": "นครราชสีมา เขต 6",
+        "key": "นครราชสีมา-6"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 7,
+        "displayName": "นครราชสีมา เขต 7",
+        "key": "นครราชสีมา-7"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 8,
+        "displayName": "นครราชสีมา เขต 8",
+        "key": "นครราชสีมา-8"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 9,
+        "displayName": "นครราชสีมา เขต 9",
+        "key": "นครราชสีมา-9"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 10,
+        "displayName": "นครราชสีมา เขต 10",
+        "key": "นครราชสีมา-10"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 11,
+        "displayName": "นครราชสีมา เขต 11",
+        "key": "นครราชสีมา-11"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 12,
+        "displayName": "นครราชสีมา เขต 12",
+        "key": "นครราชสีมา-12"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 13,
+        "displayName": "นครราชสีมา เขต 13",
+        "key": "นครราชสีมา-13"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 14,
+        "displayName": "นครราชสีมา เขต 14",
+        "key": "นครราชสีมา-14"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 15,
+        "displayName": "นครราชสีมา เขต 15",
+        "key": "นครราชสีมา-15"
+      },
+      {
+        "province": "นครราชสีมา",
+        "districtNumber": 16,
+        "displayName": "นครราชสีมา เขต 16",
+        "key": "นครราชสีมา-16"
+      },
+      {
+        "province": "นครศรีธรรมราช",
+        "districtNumber": 1,
+        "displayName": "นครศรีธรรมราช เขต 1",
+        "key": "นครศรีธรรมราช-1"
+      },
+      {
+        "province": "นครศรีธรรมราช",
+        "districtNumber": 2,
+        "displayName": "นครศรีธรรมราช เขต 2",
+        "key": "นครศรีธรรมราช-2"
+      },
+      {
+        "province": "นครศรีธรรมราช",
+        "districtNumber": 3,
+        "displayName": "นครศรีธรรมราช เขต 3",
+        "key": "นครศรีธรรมราช-3"
+      },
+      {
+        "province": "นครศรีธรรมราช",
+        "districtNumber": 4,
+        "displayName": "นครศรีธรรมราช เขต 4",
+        "key": "นครศรีธรรมราช-4"
+      },
+      {
+        "province": "นครศรีธรรมราช",
+        "districtNumber": 5,
+        "displayName": "นครศรีธรรมราช เขต 5",
+        "key": "นครศรีธรรมราช-5"
+      },
+      {
+        "province": "นครศรีธรรมราช",
+        "districtNumber": 6,
+        "displayName": "นครศรีธรรมราช เขต 6",
+        "key": "นครศรีธรรมราช-6"
+      },
+      {
+        "province": "นครศรีธรรมราช",
+        "districtNumber": 7,
+        "displayName": "นครศรีธรรมราช เขต 7",
+        "key": "นครศรีธรรมราช-7"
+      },
+      {
+        "province": "นครศรีธรรมราช",
+        "districtNumber": 8,
+        "displayName": "นครศรีธรรมราช เขต 8",
+        "key": "นครศรีธรรมราช-8"
+      },
+      {
+        "province": "นครศรีธรรมราช",
+        "districtNumber": 9,
+        "displayName": "นครศรีธรรมราช เขต 9",
+        "key": "นครศรีธรรมราช-9"
+      },
+      {
+        "province": "นครสวรรค์",
+        "districtNumber": 1,
+        "displayName": "นครสวรรค์ เขต 1",
+        "key": "นครสวรรค์-1"
+      },
+      {
+        "province": "นครสวรรค์",
+        "districtNumber": 2,
+        "displayName": "นครสวรรค์ เขต 2",
+        "key": "นครสวรรค์-2"
+      },
+      {
+        "province": "นครสวรรค์",
+        "districtNumber": 3,
+        "displayName": "นครสวรรค์ เขต 3",
+        "key": "นครสวรรค์-3"
+      },
+      {
+        "province": "นครสวรรค์",
+        "districtNumber": 4,
+        "displayName": "นครสวรรค์ เขต 4",
+        "key": "นครสวรรค์-4"
+      },
+      {
+        "province": "นครสวรรค์",
+        "districtNumber": 5,
+        "displayName": "นครสวรรค์ เขต 5",
+        "key": "นครสวรรค์-5"
+      },
+      {
+        "province": "นครสวรรค์",
+        "districtNumber": 6,
+        "displayName": "นครสวรรค์ เขต 6",
+        "key": "นครสวรรค์-6"
+      },
+      {
+        "province": "นนทบุรี",
+        "districtNumber": 1,
+        "displayName": "นนทบุรี เขต 1",
+        "key": "นนทบุรี-1"
+      },
+      {
+        "province": "นนทบุรี",
+        "districtNumber": 2,
+        "displayName": "นนทบุรี เขต 2",
+        "key": "นนทบุรี-2"
+      },
+      {
+        "province": "นนทบุรี",
+        "districtNumber": 3,
+        "displayName": "นนทบุรี เขต 3",
+        "key": "นนทบุรี-3"
+      },
+      {
+        "province": "นนทบุรี",
+        "districtNumber": 4,
+        "displayName": "นนทบุรี เขต 4",
+        "key": "นนทบุรี-4"
+      },
+      {
+        "province": "นนทบุรี",
+        "districtNumber": 5,
+        "displayName": "นนทบุรี เขต 5",
+        "key": "นนทบุรี-5"
+      },
+      {
+        "province": "นนทบุรี",
+        "districtNumber": 6,
+        "displayName": "นนทบุรี เขต 6",
+        "key": "นนทบุรี-6"
+      },
+      {
+        "province": "นนทบุรี",
+        "districtNumber": 7,
+        "displayName": "นนทบุรี เขต 7",
+        "key": "นนทบุรี-7"
+      },
+      {
+        "province": "นนทบุรี",
+        "districtNumber": 8,
+        "displayName": "นนทบุรี เขต 8",
+        "key": "นนทบุรี-8"
+      },
+      {
+        "province": "นราธิวาส",
+        "districtNumber": 1,
+        "displayName": "นราธิวาส เขต 1",
+        "key": "นราธิวาส-1"
+      },
+      {
+        "province": "นราธิวาส",
+        "districtNumber": 2,
+        "displayName": "นราธิวาส เขต 2",
+        "key": "นราธิวาส-2"
+      },
+      {
+        "province": "นราธิวาส",
+        "districtNumber": 3,
+        "displayName": "นราธิวาส เขต 3",
+        "key": "นราธิวาส-3"
+      },
+      {
+        "province": "นราธิวาส",
+        "districtNumber": 4,
+        "displayName": "นราธิวาส เขต 4",
+        "key": "นราธิวาส-4"
+      },
+      {
+        "province": "นราธิวาส",
+        "districtNumber": 5,
+        "displayName": "นราธิวาส เขต 5",
+        "key": "นราธิวาส-5"
+      },
+      {
+        "province": "น่าน",
+        "districtNumber": 1,
+        "displayName": "น่าน เขต 1",
+        "key": "น่าน-1"
+      },
+      {
+        "province": "น่าน",
+        "districtNumber": 2,
+        "displayName": "น่าน เขต 2",
+        "key": "น่าน-2"
+      },
+      {
+        "province": "น่าน",
+        "districtNumber": 3,
+        "displayName": "น่าน เขต 3",
+        "key": "น่าน-3"
+      },
+      {
+        "province": "บึงกาฬ",
+        "districtNumber": 1,
+        "displayName": "บึงกาฬ เขต 1",
+        "key": "บึงกาฬ-1"
+      },
+      {
+        "province": "บึงกาฬ",
+        "districtNumber": 2,
+        "displayName": "บึงกาฬ เขต 2",
+        "key": "บึงกาฬ-2"
+      },
+      {
+        "province": "บึงกาฬ",
+        "districtNumber": 3,
+        "displayName": "บึงกาฬ เขต 3",
+        "key": "บึงกาฬ-3"
+      },
+      {
+        "province": "บุรีรัมย์",
+        "districtNumber": 1,
+        "displayName": "บุรีรัมย์ เขต 1",
+        "key": "บุรีรัมย์-1"
+      },
+      {
+        "province": "บุรีรัมย์",
+        "districtNumber": 2,
+        "displayName": "บุรีรัมย์ เขต 2",
+        "key": "บุรีรัมย์-2"
+      },
+      {
+        "province": "บุรีรัมย์",
+        "districtNumber": 3,
+        "displayName": "บุรีรัมย์ เขต 3",
+        "key": "บุรีรัมย์-3"
+      },
+      {
+        "province": "บุรีรัมย์",
+        "districtNumber": 4,
+        "displayName": "บุรีรัมย์ เขต 4",
+        "key": "บุรีรัมย์-4"
+      },
+      {
+        "province": "บุรีรัมย์",
+        "districtNumber": 5,
+        "displayName": "บุรีรัมย์ เขต 5",
+        "key": "บุรีรัมย์-5"
+      },
+      {
+        "province": "บุรีรัมย์",
+        "districtNumber": 6,
+        "displayName": "บุรีรัมย์ เขต 6",
+        "key": "บุรีรัมย์-6"
+      },
+      {
+        "province": "บุรีรัมย์",
+        "districtNumber": 7,
+        "displayName": "บุรีรัมย์ เขต 7",
+        "key": "บุรีรัมย์-7"
+      },
+      {
+        "province": "บุรีรัมย์",
+        "districtNumber": 8,
+        "displayName": "บุรีรัมย์ เขต 8",
+        "key": "บุรีรัมย์-8"
+      },
+      {
+        "province": "บุรีรัมย์",
+        "districtNumber": 9,
+        "displayName": "บุรีรัมย์ เขต 9",
+        "key": "บุรีรัมย์-9"
+      },
+      {
+        "province": "บุรีรัมย์",
+        "districtNumber": 10,
+        "displayName": "บุรีรัมย์ เขต 10",
+        "key": "บุรีรัมย์-10"
+      },
+      {
+        "province": "ปทุมธานี",
+        "districtNumber": 1,
+        "displayName": "ปทุมธานี เขต 1",
+        "key": "ปทุมธานี-1"
+      },
+      {
+        "province": "ปทุมธานี",
+        "districtNumber": 2,
+        "displayName": "ปทุมธานี เขต 2",
+        "key": "ปทุมธานี-2"
+      },
+      {
+        "province": "ปทุมธานี",
+        "districtNumber": 3,
+        "displayName": "ปทุมธานี เขต 3",
+        "key": "ปทุมธานี-3"
+      },
+      {
+        "province": "ปทุมธานี",
+        "districtNumber": 4,
+        "displayName": "ปทุมธานี เขต 4",
+        "key": "ปทุมธานี-4"
+      },
+      {
+        "province": "ปทุมธานี",
+        "districtNumber": 5,
+        "displayName": "ปทุมธานี เขต 5",
+        "key": "ปทุมธานี-5"
+      },
+      {
+        "province": "ปทุมธานี",
+        "districtNumber": 6,
+        "displayName": "ปทุมธานี เขต 6",
+        "key": "ปทุมธานี-6"
+      },
+      {
+        "province": "ปทุมธานี",
+        "districtNumber": 7,
+        "displayName": "ปทุมธานี เขต 7",
+        "key": "ปทุมธานี-7"
+      },
+      {
+        "province": "ปทุมธานี",
+        "districtNumber": 8,
+        "displayName": "ปทุมธานี เขต 8",
+        "key": "ปทุมธานี-8"
+      },
+      {
+        "province": "ประจวบคีรีขันธ์",
+        "districtNumber": 1,
+        "displayName": "ประจวบคีรีขันธ์ เขต 1",
+        "key": "ประจวบคีรีขันธ์-1"
+      },
+      {
+        "province": "ประจวบคีรีขันธ์",
+        "districtNumber": 2,
+        "displayName": "ประจวบคีรีขันธ์ เขต 2",
+        "key": "ประจวบคีรีขันธ์-2"
+      },
+      {
+        "province": "ประจวบคีรีขันธ์",
+        "districtNumber": 3,
+        "displayName": "ประจวบคีรีขันธ์ เขต 3",
+        "key": "ประจวบคีรีขันธ์-3"
+      },
+      {
+        "province": "ปราจีนบุรี",
+        "districtNumber": 1,
+        "displayName": "ปราจีนบุรี เขต 1",
+        "key": "ปราจีนบุรี-1"
+      },
+      {
+        "province": "ปราจีนบุรี",
+        "districtNumber": 2,
+        "displayName": "ปราจีนบุรี เขต 2",
+        "key": "ปราจีนบุรี-2"
+      },
+      {
+        "province": "ปราจีนบุรี",
+        "districtNumber": 3,
+        "displayName": "ปราจีนบุรี เขต 3",
+        "key": "ปราจีนบุรี-3"
+      },
+      {
+        "province": "ปัตตานี",
+        "districtNumber": 1,
+        "displayName": "ปัตตานี เขต 1",
+        "key": "ปัตตานี-1"
+      },
+      {
+        "province": "ปัตตานี",
+        "districtNumber": 2,
+        "displayName": "ปัตตานี เขต 2",
+        "key": "ปัตตานี-2"
+      },
+      {
+        "province": "ปัตตานี",
+        "districtNumber": 3,
+        "displayName": "ปัตตานี เขต 3",
+        "key": "ปัตตานี-3"
+      },
+      {
+        "province": "ปัตตานี",
+        "districtNumber": 4,
+        "displayName": "ปัตตานี เขต 4",
+        "key": "ปัตตานี-4"
+      },
+      {
+        "province": "ปัตตานี",
+        "districtNumber": 5,
+        "displayName": "ปัตตานี เขต 5",
+        "key": "ปัตตานี-5"
+      },
+      {
+        "province": "พระนครศรีอยุธยา",
+        "districtNumber": 1,
+        "displayName": "พระนครศรีอยุธยา เขต 1",
+        "key": "พระนครศรีอยุธยา-1"
+      },
+      {
+        "province": "พระนครศรีอยุธยา",
+        "districtNumber": 2,
+        "displayName": "พระนครศรีอยุธยา เขต 2",
+        "key": "พระนครศรีอยุธยา-2"
+      },
+      {
+        "province": "พระนครศรีอยุธยา",
+        "districtNumber": 3,
+        "displayName": "พระนครศรีอยุธยา เขต 3",
+        "key": "พระนครศรีอยุธยา-3"
+      },
+      {
+        "province": "พระนครศรีอยุธยา",
+        "districtNumber": 4,
+        "displayName": "พระนครศรีอยุธยา เขต 4",
+        "key": "พระนครศรีอยุธยา-4"
+      },
+      {
+        "province": "พระนครศรีอยุธยา",
+        "districtNumber": 5,
+        "displayName": "พระนครศรีอยุธยา เขต 5",
+        "key": "พระนครศรีอยุธยา-5"
+      },
+      {
+        "province": "พะเยา",
+        "districtNumber": 1,
+        "displayName": "พะเยา เขต 1",
+        "key": "พะเยา-1"
+      },
+      {
+        "province": "พะเยา",
+        "districtNumber": 2,
+        "displayName": "พะเยา เขต 2",
+        "key": "พะเยา-2"
+      },
+      {
+        "province": "พะเยา",
+        "districtNumber": 3,
+        "displayName": "พะเยา เขต 3",
+        "key": "พะเยา-3"
+      },
+      {
+        "province": "พังงา",
+        "districtNumber": 1,
+        "displayName": "พังงา เขต 1",
+        "key": "พังงา-1"
+      },
+      {
+        "province": "พังงา",
+        "districtNumber": 2,
+        "displayName": "พังงา เขต 2",
+        "key": "พังงา-2"
+      },
+      {
+        "province": "พัทลุง",
+        "districtNumber": 1,
+        "displayName": "พัทลุง เขต 1",
+        "key": "พัทลุง-1"
+      },
+      {
+        "province": "พัทลุง",
+        "districtNumber": 2,
+        "displayName": "พัทลุง เขต 2",
+        "key": "พัทลุง-2"
+      },
+      {
+        "province": "พัทลุง",
+        "districtNumber": 3,
+        "displayName": "พัทลุง เขต 3",
+        "key": "พัทลุง-3"
+      },
+      {
+        "province": "พิจิตร",
+        "districtNumber": 1,
+        "displayName": "พิจิตร เขต 1",
+        "key": "พิจิตร-1"
+      },
+      {
+        "province": "พิจิตร",
+        "districtNumber": 2,
+        "displayName": "พิจิตร เขต 2",
+        "key": "พิจิตร-2"
+      },
+      {
+        "province": "พิจิตร",
+        "districtNumber": 3,
+        "displayName": "พิจิตร เขต 3",
+        "key": "พิจิตร-3"
+      },
+      {
+        "province": "พิษณุโลก",
+        "districtNumber": 1,
+        "displayName": "พิษณุโลก เขต 1",
+        "key": "พิษณุโลก-1"
+      },
+      {
+        "province": "พิษณุโลก",
+        "districtNumber": 2,
+        "displayName": "พิษณุโลก เขต 2",
+        "key": "พิษณุโลก-2"
+      },
+      {
+        "province": "พิษณุโลก",
+        "districtNumber": 3,
+        "displayName": "พิษณุโลก เขต 3",
+        "key": "พิษณุโลก-3"
+      },
+      {
+        "province": "พิษณุโลก",
+        "districtNumber": 4,
+        "displayName": "พิษณุโลก เขต 4",
+        "key": "พิษณุโลก-4"
+      },
+      {
+        "province": "พิษณุโลก",
+        "districtNumber": 5,
+        "displayName": "พิษณุโลก เขต 5",
+        "key": "พิษณุโลก-5"
+      },
+      {
+        "province": "ภูเก็ต",
+        "districtNumber": 1,
+        "displayName": "ภูเก็ต เขต 1",
+        "key": "ภูเก็ต-1"
+      },
+      {
+        "province": "ภูเก็ต",
+        "districtNumber": 2,
+        "displayName": "ภูเก็ต เขต 2",
+        "key": "ภูเก็ต-2"
+      },
+      {
+        "province": "ภูเก็ต",
+        "districtNumber": 3,
+        "displayName": "ภูเก็ต เขต 3",
+        "key": "ภูเก็ต-3"
+      },
+      {
+        "province": "มหาสารคาม",
+        "districtNumber": 1,
+        "displayName": "มหาสารคาม เขต 1",
+        "key": "มหาสารคาม-1"
+      },
+      {
+        "province": "มหาสารคาม",
+        "districtNumber": 2,
+        "displayName": "มหาสารคาม เขต 2",
+        "key": "มหาสารคาม-2"
+      },
+      {
+        "province": "มหาสารคาม",
+        "districtNumber": 3,
+        "displayName": "มหาสารคาม เขต 3",
+        "key": "มหาสารคาม-3"
+      },
+      {
+        "province": "มหาสารคาม",
+        "districtNumber": 4,
+        "displayName": "มหาสารคาม เขต 4",
+        "key": "มหาสารคาม-4"
+      },
+      {
+        "province": "มหาสารคาม",
+        "districtNumber": 5,
+        "displayName": "มหาสารคาม เขต 5",
+        "key": "มหาสารคาม-5"
+      },
+      {
+        "province": "มหาสารคาม",
+        "districtNumber": 6,
+        "displayName": "มหาสารคาม เขต 6",
+        "key": "มหาสารคาม-6"
+      },
+      {
+        "province": "มุกดาหาร",
+        "districtNumber": 1,
+        "displayName": "มุกดาหาร เขต 1",
+        "key": "มุกดาหาร-1"
+      },
+      {
+        "province": "มุกดาหาร",
+        "districtNumber": 2,
+        "displayName": "มุกดาหาร เขต 2",
+        "key": "มุกดาหาร-2"
+      },
+      {
+        "province": "ยะลา",
+        "districtNumber": 1,
+        "displayName": "ยะลา เขต 1",
+        "key": "ยะลา-1"
+      },
+      {
+        "province": "ยะลา",
+        "districtNumber": 2,
+        "displayName": "ยะลา เขต 2",
+        "key": "ยะลา-2"
+      },
+      {
+        "province": "ยะลา",
+        "districtNumber": 3,
+        "displayName": "ยะลา เขต 3",
+        "key": "ยะลา-3"
+      },
+      {
+        "province": "ยโสธร",
+        "districtNumber": 1,
+        "displayName": "ยโสธร เขต 1",
+        "key": "ยโสธร-1"
+      },
+      {
+        "province": "ยโสธร",
+        "districtNumber": 2,
+        "displayName": "ยโสธร เขต 2",
+        "key": "ยโสธร-2"
+      },
+      {
+        "province": "ยโสธร",
+        "districtNumber": 3,
+        "displayName": "ยโสธร เขต 3",
+        "key": "ยโสธร-3"
+      },
+      {
+        "province": "ระนอง",
+        "districtNumber": 1,
+        "displayName": "ระนอง เขต 1",
+        "key": "ระนอง-1"
+      },
+      {
+        "province": "ระยอง",
+        "districtNumber": 1,
+        "displayName": "ระยอง เขต 1",
+        "key": "ระยอง-1"
+      },
+      {
+        "province": "ระยอง",
+        "districtNumber": 2,
+        "displayName": "ระยอง เขต 2",
+        "key": "ระยอง-2"
+      },
+      {
+        "province": "ระยอง",
+        "districtNumber": 3,
+        "displayName": "ระยอง เขต 3",
+        "key": "ระยอง-3"
+      },
+      {
+        "province": "ระยอง",
+        "districtNumber": 4,
+        "displayName": "ระยอง เขต 4",
+        "key": "ระยอง-4"
+      },
+      {
+        "province": "ระยอง",
+        "districtNumber": 5,
+        "displayName": "ระยอง เขต 5",
+        "key": "ระยอง-5"
+      },
+      {
+        "province": "ราชบุรี",
+        "districtNumber": 1,
+        "displayName": "ราชบุรี เขต 1",
+        "key": "ราชบุรี-1"
+      },
+      {
+        "province": "ราชบุรี",
+        "districtNumber": 2,
+        "displayName": "ราชบุรี เขต 2",
+        "key": "ราชบุรี-2"
+      },
+      {
+        "province": "ราชบุรี",
+        "districtNumber": 3,
+        "displayName": "ราชบุรี เขต 3",
+        "key": "ราชบุรี-3"
+      },
+      {
+        "province": "ราชบุรี",
+        "districtNumber": 4,
+        "displayName": "ราชบุรี เขต 4",
+        "key": "ราชบุรี-4"
+      },
+      {
+        "province": "ราชบุรี",
+        "districtNumber": 5,
+        "displayName": "ราชบุรี เขต 5",
+        "key": "ราชบุรี-5"
+      },
+      {
+        "province": "ร้อยเอ็ด",
+        "districtNumber": 1,
+        "displayName": "ร้อยเอ็ด เขต 1",
+        "key": "ร้อยเอ็ด-1"
+      },
+      {
+        "province": "ร้อยเอ็ด",
+        "districtNumber": 2,
+        "displayName": "ร้อยเอ็ด เขต 2",
+        "key": "ร้อยเอ็ด-2"
+      },
+      {
+        "province": "ร้อยเอ็ด",
+        "districtNumber": 3,
+        "displayName": "ร้อยเอ็ด เขต 3",
+        "key": "ร้อยเอ็ด-3"
+      },
+      {
+        "province": "ร้อยเอ็ด",
+        "districtNumber": 4,
+        "displayName": "ร้อยเอ็ด เขต 4",
+        "key": "ร้อยเอ็ด-4"
+      },
+      {
+        "province": "ร้อยเอ็ด",
+        "districtNumber": 5,
+        "displayName": "ร้อยเอ็ด เขต 5",
+        "key": "ร้อยเอ็ด-5"
+      },
+      {
+        "province": "ร้อยเอ็ด",
+        "districtNumber": 6,
+        "displayName": "ร้อยเอ็ด เขต 6",
+        "key": "ร้อยเอ็ด-6"
+      },
+      {
+        "province": "ร้อยเอ็ด",
+        "districtNumber": 7,
+        "displayName": "ร้อยเอ็ด เขต 7",
+        "key": "ร้อยเอ็ด-7"
+      },
+      {
+        "province": "ร้อยเอ็ด",
+        "districtNumber": 8,
+        "displayName": "ร้อยเอ็ด เขต 8",
+        "key": "ร้อยเอ็ด-8"
+      },
+      {
+        "province": "ลพบุรี",
+        "districtNumber": 1,
+        "displayName": "ลพบุรี เขต 1",
+        "key": "ลพบุรี-1"
+      },
+      {
+        "province": "ลพบุรี",
+        "districtNumber": 2,
+        "displayName": "ลพบุรี เขต 2",
+        "key": "ลพบุรี-2"
+      },
+      {
+        "province": "ลพบุรี",
+        "districtNumber": 3,
+        "displayName": "ลพบุรี เขต 3",
+        "key": "ลพบุรี-3"
+      },
+      {
+        "province": "ลพบุรี",
+        "districtNumber": 4,
+        "displayName": "ลพบุรี เขต 4",
+        "key": "ลพบุรี-4"
+      },
+      {
+        "province": "ลำปาง",
+        "districtNumber": 1,
+        "displayName": "ลำปาง เขต 1",
+        "key": "ลำปาง-1"
+      },
+      {
+        "province": "ลำปาง",
+        "districtNumber": 2,
+        "displayName": "ลำปาง เขต 2",
+        "key": "ลำปาง-2"
+      },
+      {
+        "province": "ลำปาง",
+        "districtNumber": 3,
+        "displayName": "ลำปาง เขต 3",
+        "key": "ลำปาง-3"
+      },
+      {
+        "province": "ลำปาง",
+        "districtNumber": 4,
+        "displayName": "ลำปาง เขต 4",
+        "key": "ลำปาง-4"
+      },
+      {
+        "province": "ลำพูน",
+        "districtNumber": 1,
+        "displayName": "ลำพูน เขต 1",
+        "key": "ลำพูน-1"
+      },
+      {
+        "province": "ลำพูน",
+        "districtNumber": 2,
+        "displayName": "ลำพูน เขต 2",
+        "key": "ลำพูน-2"
+      },
+      {
+        "province": "ศรีสะเกษ",
+        "districtNumber": 1,
+        "displayName": "ศรีสะเกษ เขต 1",
+        "key": "ศรีสะเกษ-1"
+      },
+      {
+        "province": "ศรีสะเกษ",
+        "districtNumber": 2,
+        "displayName": "ศรีสะเกษ เขต 2",
+        "key": "ศรีสะเกษ-2"
+      },
+      {
+        "province": "ศรีสะเกษ",
+        "districtNumber": 3,
+        "displayName": "ศรีสะเกษ เขต 3",
+        "key": "ศรีสะเกษ-3"
+      },
+      {
+        "province": "ศรีสะเกษ",
+        "districtNumber": 4,
+        "displayName": "ศรีสะเกษ เขต 4",
+        "key": "ศรีสะเกษ-4"
+      },
+      {
+        "province": "ศรีสะเกษ",
+        "districtNumber": 5,
+        "displayName": "ศรีสะเกษ เขต 5",
+        "key": "ศรีสะเกษ-5"
+      },
+      {
+        "province": "ศรีสะเกษ",
+        "districtNumber": 6,
+        "displayName": "ศรีสะเกษ เขต 6",
+        "key": "ศรีสะเกษ-6"
+      },
+      {
+        "province": "ศรีสะเกษ",
+        "districtNumber": 7,
+        "displayName": "ศรีสะเกษ เขต 7",
+        "key": "ศรีสะเกษ-7"
+      },
+      {
+        "province": "ศรีสะเกษ",
+        "districtNumber": 8,
+        "displayName": "ศรีสะเกษ เขต 8",
+        "key": "ศรีสะเกษ-8"
+      },
+      {
+        "province": "ศรีสะเกษ",
+        "districtNumber": 9,
+        "displayName": "ศรีสะเกษ เขต 9",
+        "key": "ศรีสะเกษ-9"
+      },
+      {
+        "province": "สกลนคร",
+        "districtNumber": 1,
+        "displayName": "สกลนคร เขต 1",
+        "key": "สกลนคร-1"
+      },
+      {
+        "province": "สกลนคร",
+        "districtNumber": 2,
+        "displayName": "สกลนคร เขต 2",
+        "key": "สกลนคร-2"
+      },
+      {
+        "province": "สกลนคร",
+        "districtNumber": 3,
+        "displayName": "สกลนคร เขต 3",
+        "key": "สกลนคร-3"
+      },
+      {
+        "province": "สกลนคร",
+        "districtNumber": 4,
+        "displayName": "สกลนคร เขต 4",
+        "key": "สกลนคร-4"
+      },
+      {
+        "province": "สกลนคร",
+        "districtNumber": 5,
+        "displayName": "สกลนคร เขต 5",
+        "key": "สกลนคร-5"
+      },
+      {
+        "province": "สกลนคร",
+        "districtNumber": 6,
+        "displayName": "สกลนคร เขต 6",
+        "key": "สกลนคร-6"
+      },
+      {
+        "province": "สกลนคร",
+        "districtNumber": 7,
+        "displayName": "สกลนคร เขต 7",
+        "key": "สกลนคร-7"
+      },
+      {
+        "province": "สงขลา",
+        "districtNumber": 1,
+        "displayName": "สงขลา เขต 1",
+        "key": "สงขลา-1"
+      },
+      {
+        "province": "สงขลา",
+        "districtNumber": 2,
+        "displayName": "สงขลา เขต 2",
+        "key": "สงขลา-2"
+      },
+      {
+        "province": "สงขลา",
+        "districtNumber": 3,
+        "displayName": "สงขลา เขต 3",
+        "key": "สงขลา-3"
+      },
+      {
+        "province": "สงขลา",
+        "districtNumber": 4,
+        "displayName": "สงขลา เขต 4",
+        "key": "สงขลา-4"
+      },
+      {
+        "province": "สงขลา",
+        "districtNumber": 5,
+        "displayName": "สงขลา เขต 5",
+        "key": "สงขลา-5"
+      },
+      {
+        "province": "สงขลา",
+        "districtNumber": 6,
+        "displayName": "สงขลา เขต 6",
+        "key": "สงขลา-6"
+      },
+      {
+        "province": "สงขลา",
+        "districtNumber": 7,
+        "displayName": "สงขลา เขต 7",
+        "key": "สงขลา-7"
+      },
+      {
+        "province": "สงขลา",
+        "districtNumber": 8,
+        "displayName": "สงขลา เขต 8",
+        "key": "สงขลา-8"
+      },
+      {
+        "province": "สงขลา",
+        "districtNumber": 9,
+        "displayName": "สงขลา เขต 9",
+        "key": "สงขลา-9"
+      },
+      {
+        "province": "สตูล",
+        "districtNumber": 1,
+        "displayName": "สตูล เขต 1",
+        "key": "สตูล-1"
+      },
+      {
+        "province": "สตูล",
+        "districtNumber": 2,
+        "displayName": "สตูล เขต 2",
+        "key": "สตูล-2"
+      },
+      {
+        "province": "สมุทรปราการ",
+        "districtNumber": 1,
+        "displayName": "สมุทรปราการ เขต 1",
+        "key": "สมุทรปราการ-1"
+      },
+      {
+        "province": "สมุทรปราการ",
+        "districtNumber": 2,
+        "displayName": "สมุทรปราการ เขต 2",
+        "key": "สมุทรปราการ-2"
+      },
+      {
+        "province": "สมุทรปราการ",
+        "districtNumber": 3,
+        "displayName": "สมุทรปราการ เขต 3",
+        "key": "สมุทรปราการ-3"
+      },
+      {
+        "province": "สมุทรปราการ",
+        "districtNumber": 4,
+        "displayName": "สมุทรปราการ เขต 4",
+        "key": "สมุทรปราการ-4"
+      },
+      {
+        "province": "สมุทรปราการ",
+        "districtNumber": 5,
+        "displayName": "สมุทรปราการ เขต 5",
+        "key": "สมุทรปราการ-5"
+      },
+      {
+        "province": "สมุทรปราการ",
+        "districtNumber": 6,
+        "displayName": "สมุทรปราการ เขต 6",
+        "key": "สมุทรปราการ-6"
+      },
+      {
+        "province": "สมุทรปราการ",
+        "districtNumber": 7,
+        "displayName": "สมุทรปราการ เขต 7",
+        "key": "สมุทรปราการ-7"
+      },
+      {
+        "province": "สมุทรปราการ",
+        "districtNumber": 8,
+        "displayName": "สมุทรปราการ เขต 8",
+        "key": "สมุทรปราการ-8"
+      },
+      {
+        "province": "สมุทรสงคราม",
+        "districtNumber": 1,
+        "displayName": "สมุทรสงคราม เขต 1",
+        "key": "สมุทรสงคราม-1"
+      },
+      {
+        "province": "สมุทรสาคร",
+        "districtNumber": 1,
+        "displayName": "สมุทรสาคร เขต 1",
+        "key": "สมุทรสาคร-1"
+      },
+      {
+        "province": "สมุทรสาคร",
+        "districtNumber": 2,
+        "displayName": "สมุทรสาคร เขต 2",
+        "key": "สมุทรสาคร-2"
+      },
+      {
+        "province": "สมุทรสาคร",
+        "districtNumber": 3,
+        "displayName": "สมุทรสาคร เขต 3",
+        "key": "สมุทรสาคร-3"
+      },
+      {
+        "province": "สมุทรสาคร",
+        "districtNumber": 4,
+        "displayName": "สมุทรสาคร เขต 4",
+        "key": "สมุทรสาคร-4"
+      },
+      {
+        "province": "สระบุรี",
+        "districtNumber": 1,
+        "displayName": "สระบุรี เขต 1",
+        "key": "สระบุรี-1"
+      },
+      {
+        "province": "สระบุรี",
+        "districtNumber": 2,
+        "displayName": "สระบุรี เขต 2",
+        "key": "สระบุรี-2"
+      },
+      {
+        "province": "สระบุรี",
+        "districtNumber": 3,
+        "displayName": "สระบุรี เขต 3",
+        "key": "สระบุรี-3"
+      },
+      {
+        "province": "สระบุรี",
+        "districtNumber": 4,
+        "displayName": "สระบุรี เขต 4",
+        "key": "สระบุรี-4"
+      },
+      {
+        "province": "สระแก้ว",
+        "districtNumber": 1,
+        "displayName": "สระแก้ว เขต 1",
+        "key": "สระแก้ว-1"
+      },
+      {
+        "province": "สระแก้ว",
+        "districtNumber": 2,
+        "displayName": "สระแก้ว เขต 2",
+        "key": "สระแก้ว-2"
+      },
+      {
+        "province": "สระแก้ว",
+        "districtNumber": 3,
+        "displayName": "สระแก้ว เขต 3",
+        "key": "สระแก้ว-3"
+      },
+      {
+        "province": "สิงห์บุรี",
+        "districtNumber": 1,
+        "displayName": "สิงห์บุรี เขต 1",
+        "key": "สิงห์บุรี-1"
+      },
+      {
+        "province": "สุพรรณบุรี",
+        "districtNumber": 1,
+        "displayName": "สุพรรณบุรี เขต 1",
+        "key": "สุพรรณบุรี-1"
+      },
+      {
+        "province": "สุพรรณบุรี",
+        "districtNumber": 2,
+        "displayName": "สุพรรณบุรี เขต 2",
+        "key": "สุพรรณบุรี-2"
+      },
+      {
+        "province": "สุพรรณบุรี",
+        "districtNumber": 3,
+        "displayName": "สุพรรณบุรี เขต 3",
+        "key": "สุพรรณบุรี-3"
+      },
+      {
+        "province": "สุพรรณบุรี",
+        "districtNumber": 4,
+        "displayName": "สุพรรณบุรี เขต 4",
+        "key": "สุพรรณบุรี-4"
+      },
+      {
+        "province": "สุพรรณบุรี",
+        "districtNumber": 5,
+        "displayName": "สุพรรณบุรี เขต 5",
+        "key": "สุพรรณบุรี-5"
+      },
+      {
+        "province": "สุราษฎร์ธานี",
+        "districtNumber": 1,
+        "displayName": "สุราษฎร์ธานี เขต 1",
+        "key": "สุราษฎร์ธานี-1"
+      },
+      {
+        "province": "สุราษฎร์ธานี",
+        "districtNumber": 2,
+        "displayName": "สุราษฎร์ธานี เขต 2",
+        "key": "สุราษฎร์ธานี-2"
+      },
+      {
+        "province": "สุราษฎร์ธานี",
+        "districtNumber": 3,
+        "displayName": "สุราษฎร์ธานี เขต 3",
+        "key": "สุราษฎร์ธานี-3"
+      },
+      {
+        "province": "สุราษฎร์ธานี",
+        "districtNumber": 4,
+        "displayName": "สุราษฎร์ธานี เขต 4",
+        "key": "สุราษฎร์ธานี-4"
+      },
+      {
+        "province": "สุราษฎร์ธานี",
+        "districtNumber": 5,
+        "displayName": "สุราษฎร์ธานี เขต 5",
+        "key": "สุราษฎร์ธานี-5"
+      },
+      {
+        "province": "สุราษฎร์ธานี",
+        "districtNumber": 6,
+        "displayName": "สุราษฎร์ธานี เขต 6",
+        "key": "สุราษฎร์ธานี-6"
+      },
+      {
+        "province": "สุราษฎร์ธานี",
+        "districtNumber": 7,
+        "displayName": "สุราษฎร์ธานี เขต 7",
+        "key": "สุราษฎร์ธานี-7"
+      },
+      {
+        "province": "สุรินทร์",
+        "districtNumber": 1,
+        "displayName": "สุรินทร์ เขต 1",
+        "key": "สุรินทร์-1"
+      },
+      {
+        "province": "สุรินทร์",
+        "districtNumber": 2,
+        "displayName": "สุรินทร์ เขต 2",
+        "key": "สุรินทร์-2"
+      },
+      {
+        "province": "สุรินทร์",
+        "districtNumber": 3,
+        "displayName": "สุรินทร์ เขต 3",
+        "key": "สุรินทร์-3"
+      },
+      {
+        "province": "สุรินทร์",
+        "districtNumber": 4,
+        "displayName": "สุรินทร์ เขต 4",
+        "key": "สุรินทร์-4"
+      },
+      {
+        "province": "สุรินทร์",
+        "districtNumber": 5,
+        "displayName": "สุรินทร์ เขต 5",
+        "key": "สุรินทร์-5"
+      },
+      {
+        "province": "สุรินทร์",
+        "districtNumber": 6,
+        "displayName": "สุรินทร์ เขต 6",
+        "key": "สุรินทร์-6"
+      },
+      {
+        "province": "สุรินทร์",
+        "districtNumber": 7,
+        "displayName": "สุรินทร์ เขต 7",
+        "key": "สุรินทร์-7"
+      },
+      {
+        "province": "สุรินทร์",
+        "districtNumber": 8,
+        "displayName": "สุรินทร์ เขต 8",
+        "key": "สุรินทร์-8"
+      },
+      {
+        "province": "สุโขทัย",
+        "districtNumber": 1,
+        "displayName": "สุโขทัย เขต 1",
+        "key": "สุโขทัย-1"
+      },
+      {
+        "province": "สุโขทัย",
+        "districtNumber": 2,
+        "displayName": "สุโขทัย เขต 2",
+        "key": "สุโขทัย-2"
+      },
+      {
+        "province": "สุโขทัย",
+        "districtNumber": 3,
+        "displayName": "สุโขทัย เขต 3",
+        "key": "สุโขทัย-3"
+      },
+      {
+        "province": "สุโขทัย",
+        "districtNumber": 4,
+        "displayName": "สุโขทัย เขต 4",
+        "key": "สุโขทัย-4"
+      },
+      {
+        "province": "หนองคาย",
+        "districtNumber": 1,
+        "displayName": "หนองคาย เขต 1",
+        "key": "หนองคาย-1"
+      },
+      {
+        "province": "หนองคาย",
+        "districtNumber": 2,
+        "displayName": "หนองคาย เขต 2",
+        "key": "หนองคาย-2"
+      },
+      {
+        "province": "หนองคาย",
+        "districtNumber": 3,
+        "displayName": "หนองคาย เขต 3",
+        "key": "หนองคาย-3"
+      },
+      {
+        "province": "หนองบัวลำภู",
+        "districtNumber": 1,
+        "displayName": "หนองบัวลำภู เขต 1",
+        "key": "หนองบัวลำภู-1"
+      },
+      {
+        "province": "หนองบัวลำภู",
+        "districtNumber": 2,
+        "displayName": "หนองบัวลำภู เขต 2",
+        "key": "หนองบัวลำภู-2"
+      },
+      {
+        "province": "หนองบัวลำภู",
+        "districtNumber": 3,
+        "displayName": "หนองบัวลำภู เขต 3",
+        "key": "หนองบัวลำภู-3"
+      },
+      {
+        "province": "อำนาจเจริญ",
+        "districtNumber": 1,
+        "displayName": "อำนาจเจริญ เขต 1",
+        "key": "อำนาจเจริญ-1"
+      },
+      {
+        "province": "อำนาจเจริญ",
+        "districtNumber": 2,
+        "displayName": "อำนาจเจริญ เขต 2",
+        "key": "อำนาจเจริญ-2"
+      },
+      {
+        "province": "อุดรธานี",
+        "districtNumber": 1,
+        "displayName": "อุดรธานี เขต 1",
+        "key": "อุดรธานี-1"
+      },
+      {
+        "province": "อุดรธานี",
+        "districtNumber": 2,
+        "displayName": "อุดรธานี เขต 2",
+        "key": "อุดรธานี-2"
+      },
+      {
+        "province": "อุดรธานี",
+        "districtNumber": 3,
+        "displayName": "อุดรธานี เขต 3",
+        "key": "อุดรธานี-3"
+      },
+      {
+        "province": "อุดรธานี",
+        "districtNumber": 4,
+        "displayName": "อุดรธานี เขต 4",
+        "key": "อุดรธานี-4"
+      },
+      {
+        "province": "อุดรธานี",
+        "districtNumber": 5,
+        "displayName": "อุดรธานี เขต 5",
+        "key": "อุดรธานี-5"
+      },
+      {
+        "province": "อุดรธานี",
+        "districtNumber": 6,
+        "displayName": "อุดรธานี เขต 6",
+        "key": "อุดรธานี-6"
+      },
+      {
+        "province": "อุดรธานี",
+        "districtNumber": 7,
+        "displayName": "อุดรธานี เขต 7",
+        "key": "อุดรธานี-7"
+      },
+      {
+        "province": "อุดรธานี",
+        "districtNumber": 8,
+        "displayName": "อุดรธานี เขต 8",
+        "key": "อุดรธานี-8"
+      },
+      {
+        "province": "อุดรธานี",
+        "districtNumber": 9,
+        "displayName": "อุดรธานี เขต 9",
+        "key": "อุดรธานี-9"
+      },
+      {
+        "province": "อุดรธานี",
+        "districtNumber": 10,
+        "displayName": "อุดรธานี เขต 10",
+        "key": "อุดรธานี-10"
+      },
+      {
+        "province": "อุตรดิตถ์",
+        "districtNumber": 1,
+        "displayName": "อุตรดิตถ์ เขต 1",
+        "key": "อุตรดิตถ์-1"
+      },
+      {
+        "province": "อุตรดิตถ์",
+        "districtNumber": 2,
+        "displayName": "อุตรดิตถ์ เขต 2",
+        "key": "อุตรดิตถ์-2"
+      },
+      {
+        "province": "อุตรดิตถ์",
+        "districtNumber": 3,
+        "displayName": "อุตรดิตถ์ เขต 3",
+        "key": "อุตรดิตถ์-3"
+      },
+      {
+        "province": "อุทัยธานี",
+        "districtNumber": 1,
+        "displayName": "อุทัยธานี เขต 1",
+        "key": "อุทัยธานี-1"
+      },
+      {
+        "province": "อุทัยธานี",
+        "districtNumber": 2,
+        "displayName": "อุทัยธานี เขต 2",
+        "key": "อุทัยธานี-2"
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtNumber": 1,
+        "displayName": "อุบลราชธานี เขต 1",
+        "key": "อุบลราชธานี-1"
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtNumber": 2,
+        "displayName": "อุบลราชธานี เขต 2",
+        "key": "อุบลราชธานี-2"
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtNumber": 3,
+        "displayName": "อุบลราชธานี เขต 3",
+        "key": "อุบลราชธานี-3"
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtNumber": 4,
+        "displayName": "อุบลราชธานี เขต 4",
+        "key": "อุบลราชธานี-4"
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtNumber": 5,
+        "displayName": "อุบลราชธานี เขต 5",
+        "key": "อุบลราชธานี-5"
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtNumber": 6,
+        "displayName": "อุบลราชธานี เขต 6",
+        "key": "อุบลราชธานี-6"
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtNumber": 7,
+        "displayName": "อุบลราชธานี เขต 7",
+        "key": "อุบลราชธานี-7"
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtNumber": 8,
+        "displayName": "อุบลราชธานี เขต 8",
+        "key": "อุบลราชธานี-8"
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtNumber": 9,
+        "displayName": "อุบลราชธานี เขต 9",
+        "key": "อุบลราชธานี-9"
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtNumber": 10,
+        "displayName": "อุบลราชธานี เขต 10",
+        "key": "อุบลราชธานี-10"
+      },
+      {
+        "province": "อุบลราชธานี",
+        "districtNumber": 11,
+        "displayName": "อุบลราชธานี เขต 11",
+        "key": "อุบลราชธานี-11"
+      },
+      {
+        "province": "อ่างทอง",
+        "districtNumber": 1,
+        "displayName": "อ่างทอง เขต 1",
+        "key": "อ่างทอง-1"
+      },
+      {
+        "province": "อ่างทอง",
+        "districtNumber": 2,
+        "displayName": "อ่างทอง เขต 2",
+        "key": "อ่างทอง-2"
+      },
+      {
+        "province": "เชียงราย",
+        "districtNumber": 1,
+        "displayName": "เชียงราย เขต 1",
+        "key": "เชียงราย-1"
+      },
+      {
+        "province": "เชียงราย",
+        "districtNumber": 2,
+        "displayName": "เชียงราย เขต 2",
+        "key": "เชียงราย-2"
+      },
+      {
+        "province": "เชียงราย",
+        "districtNumber": 3,
+        "displayName": "เชียงราย เขต 3",
+        "key": "เชียงราย-3"
+      },
+      {
+        "province": "เชียงราย",
+        "districtNumber": 4,
+        "displayName": "เชียงราย เขต 4",
+        "key": "เชียงราย-4"
+      },
+      {
+        "province": "เชียงราย",
+        "districtNumber": 5,
+        "displayName": "เชียงราย เขต 5",
+        "key": "เชียงราย-5"
+      },
+      {
+        "province": "เชียงราย",
+        "districtNumber": 6,
+        "displayName": "เชียงราย เขต 6",
+        "key": "เชียงราย-6"
+      },
+      {
+        "province": "เชียงราย",
+        "districtNumber": 7,
+        "displayName": "เชียงราย เขต 7",
+        "key": "เชียงราย-7"
+      },
+      {
+        "province": "เชียงใหม่",
+        "districtNumber": 1,
+        "displayName": "เชียงใหม่ เขต 1",
+        "key": "เชียงใหม่-1"
+      },
+      {
+        "province": "เชียงใหม่",
+        "districtNumber": 2,
+        "displayName": "เชียงใหม่ เขต 2",
+        "key": "เชียงใหม่-2"
+      },
+      {
+        "province": "เชียงใหม่",
+        "districtNumber": 3,
+        "displayName": "เชียงใหม่ เขต 3",
+        "key": "เชียงใหม่-3"
+      },
+      {
+        "province": "เชียงใหม่",
+        "districtNumber": 4,
+        "displayName": "เชียงใหม่ เขต 4",
+        "key": "เชียงใหม่-4"
+      },
+      {
+        "province": "เชียงใหม่",
+        "districtNumber": 5,
+        "displayName": "เชียงใหม่ เขต 5",
+        "key": "เชียงใหม่-5"
+      },
+      {
+        "province": "เชียงใหม่",
+        "districtNumber": 6,
+        "displayName": "เชียงใหม่ เขต 6",
+        "key": "เชียงใหม่-6"
+      },
+      {
+        "province": "เชียงใหม่",
+        "districtNumber": 7,
+        "displayName": "เชียงใหม่ เขต 7",
+        "key": "เชียงใหม่-7"
+      },
+      {
+        "province": "เชียงใหม่",
+        "districtNumber": 8,
+        "displayName": "เชียงใหม่ เขต 8",
+        "key": "เชียงใหม่-8"
+      },
+      {
+        "province": "เชียงใหม่",
+        "districtNumber": 9,
+        "displayName": "เชียงใหม่ เขต 9",
+        "key": "เชียงใหม่-9"
+      },
+      {
+        "province": "เชียงใหม่",
+        "districtNumber": 10,
+        "displayName": "เชียงใหม่ เขต 10",
+        "key": "เชียงใหม่-10"
+      },
+      {
+        "province": "เพชรบุรี",
+        "districtNumber": 1,
+        "displayName": "เพชรบุรี เขต 1",
+        "key": "เพชรบุรี-1"
+      },
+      {
+        "province": "เพชรบุรี",
+        "districtNumber": 2,
+        "displayName": "เพชรบุรี เขต 2",
+        "key": "เพชรบุรี-2"
+      },
+      {
+        "province": "เพชรบุรี",
+        "districtNumber": 3,
+        "displayName": "เพชรบุรี เขต 3",
+        "key": "เพชรบุรี-3"
+      },
+      {
+        "province": "เพชรบูรณ์",
+        "districtNumber": 1,
+        "displayName": "เพชรบูรณ์ เขต 1",
+        "key": "เพชรบูรณ์-1"
+      },
+      {
+        "province": "เพชรบูรณ์",
+        "districtNumber": 2,
+        "displayName": "เพชรบูรณ์ เขต 2",
+        "key": "เพชรบูรณ์-2"
+      },
+      {
+        "province": "เพชรบูรณ์",
+        "districtNumber": 3,
+        "displayName": "เพชรบูรณ์ เขต 3",
+        "key": "เพชรบูรณ์-3"
+      },
+      {
+        "province": "เพชรบูรณ์",
+        "districtNumber": 4,
+        "displayName": "เพชรบูรณ์ เขต 4",
+        "key": "เพชรบูรณ์-4"
+      },
+      {
+        "province": "เพชรบูรณ์",
+        "districtNumber": 5,
+        "displayName": "เพชรบูรณ์ เขต 5",
+        "key": "เพชรบูรณ์-5"
+      },
+      {
+        "province": "เพชรบูรณ์",
+        "districtNumber": 6,
+        "displayName": "เพชรบูรณ์ เขต 6",
+        "key": "เพชรบูรณ์-6"
+      },
+      {
+        "province": "เลย",
+        "districtNumber": 1,
+        "displayName": "เลย เขต 1",
+        "key": "เลย-1"
+      },
+      {
+        "province": "เลย",
+        "districtNumber": 2,
+        "displayName": "เลย เขต 2",
+        "key": "เลย-2"
+      },
+      {
+        "province": "เลย",
+        "districtNumber": 3,
+        "displayName": "เลย เขต 3",
+        "key": "เลย-3"
+      },
+      {
+        "province": "เลย",
+        "districtNumber": 4,
+        "displayName": "เลย เขต 4",
+        "key": "เลย-4"
+      },
+      {
+        "province": "แพร่",
+        "districtNumber": 1,
+        "displayName": "แพร่ เขต 1",
+        "key": "แพร่-1"
+      },
+      {
+        "province": "แพร่",
+        "districtNumber": 2,
+        "displayName": "แพร่ เขต 2",
+        "key": "แพร่-2"
+      },
+      {
+        "province": "แพร่",
+        "districtNumber": 3,
+        "displayName": "แพร่ เขต 3",
+        "key": "แพร่-3"
+      },
+      {
+        "province": "แม่ฮ่องสอน",
+        "districtNumber": 1,
+        "displayName": "แม่ฮ่องสอน เขต 1",
+        "key": "แม่ฮ่องสอน-1"
+      },
+      {
+        "province": "แม่ฮ่องสอน",
+        "districtNumber": 2,
+        "displayName": "แม่ฮ่องสอน เขต 2",
+        "key": "แม่ฮ่องสอน-2"
+      }
+    ],
+    "totalProvinces": 77,
+    "totalDistricts": 400
+  }

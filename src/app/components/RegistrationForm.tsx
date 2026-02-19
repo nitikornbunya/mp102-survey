@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import type { LineProfile } from "@/app/context/LineLiffContext";
 import { apiUrl } from "@/lib/api";
 import { ROLE_LABELS, type RoleKey } from "@/lib/registration-types";
-import { MOCK_PROVINCES, MOCK_DISTRICTS_BY_PROVINCE } from "@/lib/mock-provinces";
+import { loadMpDivision } from "@/lib/mp-division";
+import SearchableSelect from "@/app/components/SearchableSelect";
 
 const ROLE_OPTIONS: RoleKey[] = [
   "mp_constituency",
@@ -27,8 +28,19 @@ export default function RegistrationForm({ profile, onSuccess }: Props) {
   const [groupNumber, setGroupNumber] = useState<number | "">("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [mpDivision, setMpDivision] = useState<Awaited<ReturnType<typeof loadMpDivision>> | null>(null);
+  const [loadingDivision, setLoadingDivision] = useState(true);
 
-  const districts = provinceId ? (MOCK_DISTRICTS_BY_PROVINCE[provinceId] ?? []) : [];
+  const provinces = mpDivision?.provinces ?? [];
+  const selectedProvince = provinces.find((p) => p.province === provinceId);
+  const districts = selectedProvince?.districts ?? [];
+
+  useEffect(() => {
+    loadMpDivision()
+      .then(setMpDivision)
+      .catch(() => setError("โหลดรายการจังหวัดไม่สำเร็จ"))
+      .finally(() => setLoadingDivision(false));
+  }, []);
 
   useEffect(() => {
     if (role !== "mp_constituency") {
@@ -53,6 +65,10 @@ export default function RegistrationForm({ profile, onSuccess }: Props) {
     setSubmitting(true);
     setError(null);
     try {
+      // ส่ง provinceId เป็นชื่อจังหวัดภาษาไทย, districtId เป็นตัวเลขเขต
+      const districtNum =
+        role === "mp_constituency" && districtId ? Number(districtId) : undefined;
+
       const res = await fetch(apiUrl("/api/registration"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -61,9 +77,9 @@ export default function RegistrationForm({ profile, onSuccess }: Props) {
           lineDisplayName: profile.displayName,
           fullName: fullName.trim(),
           role,
-          provinceId: role === "mp_constituency" ? provinceId : undefined,
-          districtId: role === "mp_constituency" ? districtId : undefined,
-          province: role === "provincial_team" ? provinceTeamId : undefined,
+          provinceId: role === "mp_constituency" ? provinceId || undefined : undefined,
+          districtId: districtNum,
+          province: role === "provincial_team" ? provinceTeamId || undefined : undefined,
           groupNumber: Number(groupNumber),
         }),
       });
@@ -139,34 +155,29 @@ export default function RegistrationForm({ profile, onSuccess }: Props) {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label className="mb-1 block text-xs text-zinc-500">จังหวัด</label>
-                  <select
+                  <SearchableSelect
                     value={provinceId}
-                    onChange={(e) => {
-                      setProvinceId(e.target.value);
+                    onChange={(v) => {
+                      setProvinceId(v);
                       setDistrictId("");
                     }}
-                    className="w-full rounded-lg border border-zinc-200 bg-white px-3 py-2 text-zinc-900 focus:border-[#ff6a13] focus:outline-none focus:ring-1 focus:ring-[#ff6a13]"
-                  >
-                    <option value="">-- เลือกจังหวัด --</option>
-                    {MOCK_PROVINCES.map((p) => (
-                      <option key={p.id} value={p.id}>
-                        {p.name}
-                      </option>
-                    ))}
-                  </select>
+                    options={provinces.map((p) => ({ value: p.province, label: p.province }))}
+                    placeholder="ค้นหาหรือเลือกจังหวัด..."
+                    disabled={loadingDivision}
+                  />
                 </div>
                 <div>
                   <label className="mb-1 block text-xs text-zinc-500">เขต</label>
                   <select
                     value={districtId}
                     onChange={(e) => setDistrictId(e.target.value)}
+                    disabled={!provinceId || loadingDivision}
                     className="w-full rounded-lg border border-zinc-200 bg-white px-3 py-2 text-zinc-900 focus:border-[#ff6a13] focus:outline-none focus:ring-1 focus:ring-[#ff6a13]"
-                    disabled={!provinceId}
                   >
                     <option value="">-- เลือกเขต --</option>
                     {districts.map((d) => (
-                      <option key={d.id} value={d.id}>
-                        {d.name}
+                      <option key={d} value={d}>
+                        เขต {d}
                       </option>
                     ))}
                   </select>
@@ -178,18 +189,14 @@ export default function RegistrationForm({ profile, onSuccess }: Props) {
           {role === "provincial_team" && (
             <div className="mt-4">
               <label className="mb-1.5 block text-sm text-zinc-600">เลือกจังหวัด</label>
-              <select
+              <SearchableSelect
                 value={provinceTeamId}
-                onChange={(e) => setProvinceTeamId(e.target.value)}
-                className="w-full rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-3 text-zinc-900 focus:border-[#ff6a13] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6a13]/20"
-              >
-                <option value="">-- เลือกจังหวัด --</option>
-                {MOCK_PROVINCES.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name}
-                  </option>
-                ))}
-              </select>
+                onChange={setProvinceTeamId}
+                options={provinces.map((p) => ({ value: p.province, label: p.province }))}
+                placeholder="ค้นหาหรือเลือกจังหวัด..."
+                disabled={loadingDivision}
+                className="rounded-xl border-zinc-200 bg-zinc-50/50 px-4 py-3 focus:ring-2 focus:ring-[#ff6a13]/20"
+              />
             </div>
           )}
         </div>
