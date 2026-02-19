@@ -22,6 +22,11 @@ body {
   font-family: var(--font-prompt), sans-serif;
 }
 
+/* ฟอนต์ Sarabun (มีหัว) สำหรับคำถาม/คำตอบ */
+.font-sarabun {
+  font-family: var(--font-sarabun), serif;
+}
+
 /* ปุ่มและ input โฟกัสเนียนขึ้น */
 input:focus, textarea:focus, button:focus-visible {
   outline: none;

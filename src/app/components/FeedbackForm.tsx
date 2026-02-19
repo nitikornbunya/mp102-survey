@@ -146,19 +146,6 @@ export default function FeedbackForm() {
     }
   };
 
-  const setEditingPhase1 = () => {
-    setPhase1Submitted(false);
-    setStep("phase1");
-  };
-
-  const setEditingBase = (baseId: string) => {
-    setSubmittedBases((prev) => {
-      const next = new Set(prev);
-      next.delete(baseId);
-      return next;
-    });
-  };
-
   if (loading) {
     return (
       <div className="mx-auto flex max-w-2xl flex-col items-center justify-center gap-4 py-12">
@@ -179,67 +166,47 @@ export default function FeedbackForm() {
       {/* ช่วงที่ 1 */}
       <section className="overflow-hidden rounded-2xl border border-[#e7e5e2] bg-white shadow-lg shadow-zinc-200/40">
         <div className="border-l-4 border-[#ff6a13] bg-zinc-50/80 px-5 py-3">
-          <h2 className="text-lg font-semibold text-zinc-800">ช่วงคำถามที่ 1</h2>
+          <h2 className="font-sarabun text-xl font-semibold text-zinc-800">ช่วงคำถามที่ 1</h2>
         </div>
         <div className="space-y-5 p-5 sm:p-6">
           {phase1Questions.map((q) => (
             <div key={q.id}>
-              <label className="mb-2 block text-base font-medium text-zinc-700">
+              <label className="font-sarabun mb-2 block text-lg font-medium text-zinc-700">
                 {q.label}
               </label>
               <textarea
-                className="w-full rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-3 text-zinc-900 placeholder-zinc-400 transition focus:border-[#ff6a13] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6a13]/20"
+                className="font-sarabun w-full rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-3 text-base text-zinc-900 placeholder-zinc-400 transition focus:border-[#ff6a13] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6a13]/20"
                 rows={4}
                 placeholder={q.placeholder}
                 value={phase1[q.id as keyof Phase1Answers]}
                 onChange={(e) => setPhase1Field(q.id as keyof Phase1Answers, e.target.value)}
-                readOnly={phase1Submitted}
               />
             </div>
           ))}
         </div>
         <div className="flex flex-wrap items-center gap-3 border-t border-zinc-100 bg-zinc-50/50 px-5 py-4 sm:px-6">
-          {phase1Submitted ? (
-            <>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-3.5 py-1.5 text-sm font-medium text-emerald-800">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                บันทึกแล้ว
-              </span>
-              <button
-                type="button"
-                onClick={setEditingPhase1}
-                className="rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 shadow-sm transition hover:bg-zinc-50"
-              >
-                แก้ไข
-              </button>
-              <button
-                type="button"
-                onClick={() => setStep("phase2")}
-                className="rounded-xl bg-[#ff6a13] px-5 py-2.5 text-sm font-medium text-white shadow-md shadow-[#ff6a13]/25 transition hover:bg-[#e55f10] active:scale-[0.98]"
-              >
-                ไปช่วงคำถามที่ 2 →
-              </button>
-            </>
-          ) : (
-            <>
-              <button
-                type="button"
-                onClick={submitPhase1}
-                disabled={!canSubmitPhase1 || submitting}
-                className="rounded-xl bg-[#ff6a13] px-6 py-3 font-medium text-white shadow-md shadow-[#ff6a13]/25 transition hover:bg-[#e55f10] disabled:opacity-50 active:scale-[0.98]"
-              >
-                {submitting ? "กำลังส่ง..." : "ส่งคำตอบ"}
-              </button>
-              {feedbackId && (
-                <button
-                  type="button"
-                  onClick={() => setStep("phase2")}
-                  className="rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition hover:bg-zinc-50"
-                >
-                  ไปช่วงคำถามที่ 2 →
-                </button>
-              )}
-            </>
+          {phase1Submitted && (
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-3.5 py-1.5 text-sm font-medium text-emerald-800">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              บันทึกแล้ว
+            </span>
+          )}
+          <button
+            type="button"
+            onClick={submitPhase1}
+            disabled={!canSubmitPhase1 || submitting}
+            className="rounded-xl bg-[#ff6a13] px-6 py-3 font-medium text-white shadow-md shadow-[#ff6a13]/25 transition hover:bg-[#e55f10] disabled:opacity-50 active:scale-[0.98]"
+          >
+            {submitting ? "กำลังส่ง..." : "ส่งคำตอบ"}
+          </button>
+          {feedbackId && (
+            <button
+              type="button"
+              onClick={() => setStep("phase2")}
+              className="rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition hover:bg-zinc-50"
+            >
+              ไปช่วงคำถามที่ 2 →
+            </button>
           )}
         </div>
       </section>
@@ -247,7 +214,7 @@ export default function FeedbackForm() {
       {/* ช่วงที่ 2 - ส่งเป็นชุดรายฐาน */}
       <section className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-zinc-800">
+          <h2 className="font-sarabun text-xl font-semibold text-zinc-800">
             ช่วงคำถามที่ 2 (ตาม 4 ฐาน)
           </h2>
           {step === "phase1" && feedbackId && (
@@ -276,52 +243,41 @@ export default function FeedbackForm() {
                   className="overflow-hidden rounded-2xl border border-[#e7e5e2] bg-white shadow-md shadow-zinc-200/30"
                 >
                   <div className="border-l-4 border-[#ff6a13] bg-zinc-50/80 px-4 py-2.5">
-                    <h3 className="font-medium text-zinc-800">{base.title}</h3>
+                    <h3 className="font-sarabun text-lg font-medium text-zinc-800">{base.title}</h3>
                   </div>
                   <div className="space-y-4 p-4 sm:p-5">
                     {base.questions.map((q) => (
                       <div key={q.id}>
-                        <label className="mb-1.5 block text-sm font-medium text-zinc-600">
+                        <label className="font-sarabun mb-1.5 block text-lg font-medium text-zinc-600">
                           {q.id} {q.label}
                         </label>
                         <textarea
-                          className="w-full rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-2.5 text-zinc-900 placeholder-zinc-400 transition focus:border-[#ff6a13] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6a13]/20"
+                          className="font-sarabun w-full rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-2.5 text-base text-zinc-900 placeholder-zinc-400 transition focus:border-[#ff6a13] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6a13]/20"
                           rows={3}
                           placeholder={q.placeholder}
                           value={(phase2[base.id as keyof Phase2Answers] as BaseAnswers)?.[q.id] ?? ""}
                           onChange={(e) =>
                             setPhase2Field(base.id as keyof Phase2Answers, q.id, e.target.value)
                           }
-                          readOnly={baseSubmitted}
                         />
                       </div>
                     ))}
                   </div>
                   <div className="flex flex-wrap items-center gap-3 border-t border-zinc-100 bg-zinc-50/50 px-4 py-3 sm:px-5">
-                    {baseSubmitted ? (
-                      <>
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-3 py-1 text-sm font-medium text-emerald-800">
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                          บันทึกแล้ว
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => setEditingBase(base.id)}
-                          className="rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-sm text-zinc-600 transition hover:bg-zinc-50 hover:text-zinc-800"
-                        >
-                          แก้ไข
-                        </button>
-                      </>
-                    ) : (
-                      <button
-                        type="button"
-                        onClick={() => submitBase(base.id)}
-                        disabled={!feedbackId || submittingBase === base.id}
-                        className="rounded-xl bg-[#ff6a13] px-4 py-2.5 text-sm font-medium text-white shadow-md shadow-[#ff6a13]/20 transition hover:bg-[#e55f10] disabled:opacity-50 active:scale-[0.98]"
-                      >
-                        {submittingBase === base.id ? "กำลังส่ง..." : "ส่งคำตอบ"}
-                      </button>
+                    {baseSubmitted && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-3 py-1 text-sm font-medium text-emerald-800">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                        บันทึกแล้ว
+                      </span>
                     )}
+                    <button
+                      type="button"
+                      onClick={() => submitBase(base.id)}
+                      disabled={!feedbackId || submittingBase === base.id}
+                      className="rounded-xl bg-[#ff6a13] px-4 py-2.5 text-sm font-medium text-white shadow-md shadow-[#ff6a13]/20 transition hover:bg-[#e55f10] disabled:opacity-50 active:scale-[0.98]"
+                    >
+                      {submittingBase === base.id ? "กำลังส่ง..." : "ส่งคำตอบ"}
+                    </button>
                   </div>
                 </div>
               );

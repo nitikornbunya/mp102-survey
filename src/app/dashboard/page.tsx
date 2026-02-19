@@ -133,14 +133,14 @@ function Phase1View({ list }: { list: FeedbackPayload[] }) {
         return (
           <div key={q.id} className="overflow-hidden rounded-2xl border border-[#e7e5e2] bg-white shadow-md shadow-zinc-200/30">
             <div className="border-l-4 border-[#ff6a13] bg-zinc-50/80 px-5 py-3">
-              <h3 className="font-semibold text-zinc-800">{q.label}</h3>
+              <h3 className="font-sarabun text-lg font-semibold text-zinc-800">{q.label}</h3>
             </div>
             <ul className="divide-y divide-zinc-100 px-5 py-2">
               {answers.length === 0 ? (
-                <li className="py-4 text-sm text-zinc-500">— ยังไม่มีคำตอบ</li>
+                <li className="font-sarabun py-4 text-base text-zinc-500">— ยังไม่มีคำตอบ</li>
               ) : (
                 answers.map((text, i) => (
-                  <li key={i} className="whitespace-pre-wrap py-3 text-zinc-800 leading-relaxed">
+                  <li key={i} className="font-sarabun whitespace-pre-wrap py-3 text-base text-zinc-800 leading-relaxed">
                     {text}
                   </li>
                 ))
@@ -220,17 +220,17 @@ function Phase2View({
                 className="overflow-hidden rounded-2xl border border-[#e7e5e2] bg-white shadow-md shadow-zinc-200/30"
               >
                 <div className="border-l-4 border-[#ff6a13] bg-zinc-50/80 px-5 py-3">
-                  <p className="text-xs font-medium uppercase text-zinc-500">{base.title}</p>
-                  <h3 className="mt-0.5 font-semibold text-zinc-800">
+                  <p className="font-sarabun text-xs font-medium uppercase text-zinc-500">{base.title}</p>
+                  <h3 className="font-sarabun mt-0.5 text-lg font-semibold text-zinc-800">
                     {q.id} {q.label}
                   </h3>
                 </div>
                 <ul className="divide-y divide-zinc-100 px-5 py-2">
                   {answers.length === 0 ? (
-                    <li className="py-4 text-sm text-zinc-500">— ยังไม่มีคำตอบ</li>
+                    <li className="font-sarabun py-4 text-base text-zinc-500">— ยังไม่มีคำตอบ</li>
                   ) : (
                     answers.map((text, i) => (
-                      <li key={i} className="whitespace-pre-wrap py-3 text-zinc-800 leading-relaxed">
+                      <li key={i} className="font-sarabun whitespace-pre-wrap py-3 text-base text-zinc-800 leading-relaxed">
                         {text}
                       </li>
                     ))

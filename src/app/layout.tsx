@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Prompt } from "next/font/google";
+import { Prompt, Sarabun } from "next/font/google";
 import { LineLiffProvider } from "@/app/context/LineLiffContext";
 import "./globals.css";
 
@@ -7,6 +7,13 @@ const prompt = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin", "thai"],
   variable: "--font-prompt",
+  display: "swap",
+});
+
+const sarabun = Sarabun({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin", "thai"],
+  variable: "--font-sarabun",
   display: "swap",
 });
 
@@ -22,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th">
-      <body className={`${prompt.variable} ${prompt.className} antialiased`}>
+      <body className={`${prompt.variable} ${prompt.className} ${sarabun.variable} antialiased`}>
         <LineLiffProvider>
           {children}
         </LineLiffProvider>
