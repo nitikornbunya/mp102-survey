@@ -55,7 +55,7 @@ export default function DashboardPage() {
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-4 sm:px-6">
           <h1 className="text-xl font-bold text-zinc-800 sm:text-2xl">Dashboard</h1>
           <Link
-            href="/"
+            href="/main"
             className="rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition hover:bg-zinc-50"
           >
             ← กลับหน้าฟอร์ม
@@ -194,7 +194,7 @@ function Phase2View({
             className="rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm text-zinc-800 focus:border-[#ff6a13] focus:outline-none focus:ring-2 focus:ring-[#ff6a13]/20"
           >
             <option value="all">ทั้งหมด</option>
-            {Array.from({ length: 30 }, (_, i) => i + 1).map((n) => (
+            {Array.from({ length: 40 }, (_, i) => i + 1).map((n) => (
               <option key={n} value={String(n)}>
                 กลุ่ม {n}
               </option>

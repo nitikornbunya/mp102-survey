@@ -57,7 +57,7 @@ export default function RegistrationForm({ profile, onSuccess }: Props) {
     (role !== "provincial_team" || provinceTeamId) &&
     groupNumber !== "" &&
     Number(groupNumber) >= 1 &&
-    Number(groupNumber) <= 30;
+    Number(groupNumber) <= 40;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -205,17 +205,17 @@ export default function RegistrationForm({ profile, onSuccess }: Props) {
           <label className="mb-1.5 block text-sm font-medium text-zinc-700">
             3. กลุ่มที่อยู่ ในงานสัมมนา <span className="text-red-500">*</span>
           </label>
-          <p className="mb-2 text-xs text-zinc-500">เป็นเลข 1 ถึง 30</p>
+          <p className="mb-2 text-xs text-zinc-500">เป็นเลข 1 ถึง 40</p>
           <input
             type="number"
             min={1}
-            max={30}
+            max={40}
             value={groupNumber === "" ? "" : groupNumber}
             onChange={(e) => {
               const v = e.target.value;
-              setGroupNumber(v === "" ? "" : Math.min(30, Math.max(1, Number(v))));
+              setGroupNumber(v === "" ? "" : Math.min(40, Math.max(1, Number(v))));
             }}
-            placeholder="1-30"
+            placeholder="1-40"
             className="w-full rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-3 text-zinc-900 placeholder-zinc-400 transition focus:border-[#ff6a13] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6a13]/20"
             required
           />

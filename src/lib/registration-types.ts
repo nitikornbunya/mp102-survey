@@ -22,7 +22,7 @@ export type RegistrationPayload = {
   districtId?: string;
   /** สำหรับ ทีมจังหวัด: รหัสจังหวัด */
   province?: string;
-  /** กลุ่มที่อยู่ ในงานสัมมนา 1-30 */
+  /** กลุ่มที่อยู่ ในงานสัมมนา 1-40 */
   groupNumber: number;
   createdAt: string;
   updatedAt?: string;
