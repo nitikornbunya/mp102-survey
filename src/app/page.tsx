@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
-export const dynamic = "force-dynamic";
+// ให้รันบน Edge Runtime ตามที่ Cloudflare ต้องการ
+export const runtime = "edge";
 
 export default function Home() {
   redirect("/main");
