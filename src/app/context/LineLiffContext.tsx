@@ -36,7 +36,13 @@ export function LineLiffProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null);
 
   const login = useCallback(() => {
-    liff.login();
+    try {
+      liff.login();
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "เรียก login ไม่สำเร็จ";
+      if (typeof window !== "undefined") console.error("[LIFF login error]", err);
+      setError(msg);
+    }
   }, []);
 
   const logout = useCallback(() => {
@@ -67,7 +73,9 @@ export function LineLiffProvider({ children }: { children: ReactNode }) {
         }
       })
       .catch((err) => {
-        setError(err?.message ?? "LIFF init ไม่สำเร็จ");
+        const msg = err?.message ?? err?.toString?.() ?? "LIFF init ไม่สำเร็จ";
+        if (typeof window !== "undefined") console.error("[LIFF init error]", err);
+        setError(msg);
       })
       .finally(() => {
         setIsReady(true);

@@ -50,11 +50,16 @@ export default function LineLoginGate({
 
   if (error) {
     return (
-      <div className="mx-auto max-w-md rounded-2xl border border-amber-200 bg-amber-50/80 p-6 text-center shadow-sm">
+      <div className="mx-auto max-w-md rounded-2xl border border-amber-200 bg-amber-50/80 p-6 shadow-sm">
         <p className="font-medium text-amber-800">{error}</p>
-        <p className="mt-2 text-sm text-amber-700">
-          กรุณาตั้งค่า NEXT_PUBLIC_LIFF_ID ใน .env.local
-        </p>
+        <div className="mt-4 rounded-lg border border-amber-200 bg-white p-4 text-left text-sm text-amber-800">
+          <p className="font-medium">ถ้า Login ไม่ได้ ให้ตรวจสอบ:</p>
+          <ul className="mt-2 list-inside list-disc space-y-1">
+            <li>ตั้งค่า <code className="rounded bg-amber-100 px-1">NEXT_PUBLIC_LIFF_ID</code> ใน .env.local</li>
+            <li>ใน LINE Developers Console → Channel → LIFF → แก้ไข LIFF app → <strong>Endpoint URL</strong> ต้องตรงกับ URL ที่เปิดเว็บนี้ (เช่น <code className="rounded bg-amber-100 px-1">http://localhost:3000</code>)</li>
+            <li>ถ้าเปิดใน browser ธรรมดา ให้ตั้ง LIFF เป็นประเภท &quot;Full&quot;</li>
+          </ul>
+        </div>
       </div>
     );
   }

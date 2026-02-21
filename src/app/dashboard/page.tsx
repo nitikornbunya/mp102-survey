@@ -55,7 +55,7 @@ export default function DashboardPage() {
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-4 sm:px-6">
           <h1 className="text-xl font-bold text-zinc-800 sm:text-2xl">Dashboard</h1>
           <Link
-            href="/main"
+            href="/"
             className="rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition hover:bg-zinc-50"
           >
             ← กลับหน้าฟอร์ม

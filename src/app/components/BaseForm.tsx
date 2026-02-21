@@ -59,7 +59,7 @@ export default function BaseForm({ baseId }: Props) {
 
   const submit = async () => {
     if (!feedbackId || !profile?.userId) {
-      setError("กรุณาส่งคำตอบช่วงที่ 1 ที่หน้าหลัก (/main) ก่อน");
+      setError("กรุณาส่งคำตอบช่วงที่ 1 ที่หน้าหลักก่อน");
       return;
     }
     setSubmitting(true);
@@ -104,7 +104,7 @@ export default function BaseForm({ baseId }: Props) {
       {!feedbackId && (
         <div className="rounded-xl border border-amber-200 bg-amber-50/80 px-4 py-3 text-sm text-amber-800">
           กรุณาส่งคำตอบช่วงที่ 1 ที่{" "}
-          <Link href="/main" className="font-medium underline">
+          <Link href="/" className="font-medium underline">
             หน้าหลัก
           </Link>{" "}
           ก่อน จึงจะส่งคำตอบชุดนี้ได้
@@ -159,7 +159,7 @@ export default function BaseForm({ baseId }: Props) {
             {submitting ? "กำลังส่ง..." : "ส่งคำตอบ"}
           </button>
           <Link
-            href="/main"
+            href="/"
             className="rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition hover:bg-zinc-50"
           >
             ← หน้าหลัก

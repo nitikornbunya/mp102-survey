@@ -21,7 +21,7 @@ export const phase1Questions = [
 export const phase2Bases = [
   {
     id: "base1",
-    title: "ฐานที่ 1",
+    title: "ฐานที่ A",
     questions: [
       {
         id: "1.1",
@@ -42,7 +42,7 @@ export const phase2Bases = [
   },
   {
     id: "base2",
-    title: "ฐานที่ 2",
+    title: "ฐานที่ B",
     questions: [
       {
         id: "2.1",
@@ -63,7 +63,7 @@ export const phase2Bases = [
   },
   {
     id: "base3",
-    title: "ฐานที่ 3",
+    title: "ฐานที่ C",
     questions: [
       {
         id: "3.1",
@@ -89,7 +89,7 @@ export const phase2Bases = [
   },
   {
     id: "base4",
-    title: "ฐานที่ 4",
+    title: "ฐานที่ D",
     questions: [
       {
         id: "4.1",

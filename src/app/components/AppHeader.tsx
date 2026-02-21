@@ -6,7 +6,7 @@ import { useLineLiff } from "@/app/context/LineLiffContext";
 import { useRouter } from "next/navigation";
 
 type Props = {
-  /** ลิงก์กลับ เช่น { href: "/main", label: "← หน้าหลัก" } */
+  /** ลิงก์กลับ เช่น { href: "/", label: "← หน้าหลัก" } */
   backLink?: { href: string; label: string };
 };
 
@@ -30,7 +30,7 @@ export default function AppHeader({ backLink }: Props) {
 
   const handleEditProfile = () => {
     setMenuOpen(false);
-    router.push("/main?editProfile=1");
+    router.push("/?editProfile=1");
   };
 
   const handleLogout = () => {
@@ -97,7 +97,7 @@ export default function AppHeader({ backLink }: Props) {
                 <button
                   type="button"
                   role="menuitem"
-                  onClick={() => { setMenuOpen(false); router.push("/main"); }}
+                  onClick={() => { setMenuOpen(false); router.push("/"); }}
                   className="flex w-full px-4 py-2.5 text-left text-sm text-zinc-700 transition hover:bg-zinc-100"
                 >
                   หน้าหลัก

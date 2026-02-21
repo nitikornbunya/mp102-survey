@@ -7,7 +7,7 @@ import LineLoginGate from "@/app/components/LineLoginGate";
 export default function Base1Page() {
   return (
     <div className="min-h-screen bg-[#faf9f7]">
-      <AppHeader backLink={{ href: "/main", label: "← หน้าหลัก" }} />
+      <AppHeader backLink={{ href: "/", label: "← หน้าหลัก" }} />
       <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
         <LineLoginGate>
           <BaseForm baseId="base1" />
