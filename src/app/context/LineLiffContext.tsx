@@ -21,7 +21,8 @@ type LineLiffState = {
   isLoggedIn: boolean;
   profile: LineProfile | null;
   error: string | null;
-  login: () => void;
+  /** ส่ง redirectUri เพื่อให้หลังล็อกอิน LINE redirect กลับมาหน้าเดิม (เช่น /dashboard) */
+  login: (options?: { redirectUri?: string }) => void;
   logout: () => void;
 };
 
@@ -35,9 +36,9 @@ export function LineLiffProvider({ children }: { children: ReactNode }) {
   const [profile, setProfile] = useState<LineProfile | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const login = useCallback(() => {
+  const login = useCallback((options?: { redirectUri?: string }) => {
     try {
-      liff.login();
+      liff.login(options);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "เรียก login ไม่สำเร็จ";
       if (typeof window !== "undefined") console.error("[LIFF login error]", err);
