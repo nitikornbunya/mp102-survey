@@ -11,7 +11,7 @@ const ROLE_OPTIONS: RoleKey[] = [
   "mp_constituency",
   "mp_list",
   "provincial_team",
-  // "party_center",
+  "fa_team",
 ];
 
 type Props = {

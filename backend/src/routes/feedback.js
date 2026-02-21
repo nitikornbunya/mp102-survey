@@ -4,7 +4,7 @@ import pool from "../db.js";
 const router = Router();
 
 function rowToFeedback(row) {
-  return {
+  const out = {
     id: row.id,
     lineUserId: row.line_user_id,
     lineDisplayName: row.line_display_name ?? undefined,
@@ -14,6 +14,12 @@ function rowToFeedback(row) {
     createdAt: row.created_at?.toISOString?.() ?? row.created_at,
     updatedAt: row.updated_at?.toISOString?.() ?? row.updated_at,
   };
+  if (row.full_name != null) out.fullName = row.full_name;
+  if (row.role != null) out.role = row.role;
+  if (row.province_id != null) out.provinceId = row.province_id;
+  if (row.district_id != null) out.districtId = row.district_id;
+  if (row.province != null) out.province = row.province;
+  return out;
 }
 
 // GET /api/feedback
@@ -24,7 +30,9 @@ router.get("/", async (req, res) => {
     const { lineUserId, all } = req.query;
     if (all === "true") {
       const { rows } = await pool.query(`
-        SELECT f.*, r.group_number
+        SELECT f.*,
+          r.group_number, r.full_name, r.role,
+          r.province_id, r.district_id, r.province
         FROM feedback f
         LEFT JOIN registrations r ON f.line_user_id = r.line_user_id
         ORDER BY f.created_at ASC

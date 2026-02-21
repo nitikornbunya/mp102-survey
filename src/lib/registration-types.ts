@@ -3,13 +3,13 @@ export type RoleKey =
   | "mp_constituency"   // ผู้สมัคร สส. เขต
   | "mp_list"           // ผู้สมัคร สส. บัญชีรายชื่อ
   | "provincial_team"   // ทีมจังหวัด
-  // | "party_center";     // ส่วนกลางพรรค
+  | "fa_team";     // ส่วนกลางพรรค
 
 export const ROLE_LABELS: Record<RoleKey, string> = {
   mp_constituency: "ผู้สมัคร สส. เขต",
   mp_list: "ผู้สมัคร สส. บัญชีรายชื่อ",
   provincial_team: "ทีมจังหวัด",
-  // party_center: "ส่วนกลางพรรค",
+  fa_team: "ทีมฟา",
 };
 
 export type RegistrationPayload = {

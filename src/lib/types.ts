@@ -15,6 +15,13 @@ export type Phase2Answers = {
   base4: BaseAnswers; // ฐาน 4 (placeholder)
 };
 
+/** บทบาท (จาก registrations) */
+export type FeedbackRoleKey =
+  | "mp_constituency"
+  | "mp_list"
+  | "provincial_team"
+  | "fa_team";
+
 export type FeedbackPayload = {
   id?: string;
   createdAt: string;
@@ -26,5 +33,11 @@ export type FeedbackPayload = {
   lineDisplayName?: string;
   /** กลุ่ม (จาก API feedback?all=true) ใช้สำหรับ filter ใน Dashboard */
   groupNumber?: number;
+  /** จาก registrations (เมื่อดึง all=true) */
+  fullName?: string;
+  role?: FeedbackRoleKey;
+  provinceId?: string;
+  districtId?: number;
+  province?: string;
   meta?: { area?: string; name?: string };
 };

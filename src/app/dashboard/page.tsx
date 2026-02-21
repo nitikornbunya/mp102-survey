@@ -4,8 +4,23 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { apiUrl } from "@/lib/api";
 import { phase1Questions, phase2Bases } from "@/lib/questions";
+import { ROLE_LABELS } from "@/lib/registration-types";
 import type { FeedbackPayload } from "@/lib/types";
+import type { RoleKey } from "@/lib/registration-types";
 import LineLoginGate from "@/app/components/LineLoginGate";
+
+function provinceDistrictLabel(item: FeedbackPayload): string {
+  if (item.provinceId && item.districtId != null) return `${item.provinceId} เขต ${item.districtId}`;
+  if (item.province) return item.province;
+  return "—";
+}
+
+function answerMeta(item: FeedbackPayload) {
+  const name = item.fullName?.trim() || item.lineDisplayName?.trim() || "—";
+  const role = item.role ? ROLE_LABELS[item.role as RoleKey] : "—";
+  const area = provinceDistrictLabel(item);
+  return { name, role, area };
+}
 
 type TabId = "phase1" | "phase2";
 
@@ -127,23 +142,32 @@ function Phase1View({ list }: { list: FeedbackPayload[] }) {
   return (
     <div className="space-y-8">
       {phase1Questions.map((q) => {
-        const answers = list
-          .map((item) => item.phase1?.[q.id as keyof typeof item.phase1]?.trim())
-          .filter((t): t is string => !!t);
+        const entries = list
+          .map((item) => {
+            const text = item.phase1?.[q.id as keyof typeof item.phase1]?.trim();
+            return text ? { text, item } : null;
+          })
+          .filter((e): e is { text: string; item: FeedbackPayload } => !!e);
         return (
           <div key={q.id} className="overflow-hidden rounded-2xl border border-[#e7e5e2] bg-white shadow-md shadow-zinc-200/30">
             <div className="border-l-4 border-[#ff6a13] bg-zinc-50/80 px-5 py-3">
               <h3 className="font-sarabun text-lg font-semibold text-zinc-800">{q.label}</h3>
             </div>
             <ul className="divide-y divide-zinc-100 px-5 py-2">
-              {answers.length === 0 ? (
+              {entries.length === 0 ? (
                 <li className="font-sarabun py-4 text-base text-zinc-500">— ยังไม่มีคำตอบ</li>
               ) : (
-                answers.map((text, i) => (
-                  <li key={i} className="font-sarabun whitespace-pre-wrap py-3 text-base text-zinc-800 leading-relaxed">
-                    {text}
-                  </li>
-                ))
+                entries.map(({ text, item }, i) => {
+                  const { name, role, area } = answerMeta(item);
+                  return (
+                    <li key={i} className="font-sarabun py-3">
+                      <p className="text-base text-zinc-800 leading-relaxed whitespace-pre-wrap">{text}</p>
+                      <p className="mt-1.5 text-xs text-zinc-400">
+                        {name} · {role} · {area}
+                      </p>
+                    </li>
+                  );
+                })
               )}
             </ul>
           </div>
@@ -206,14 +230,15 @@ function Phase2View({
       <div className="space-y-8">
         {basesToShow.map((base) =>
           base.questions.map((q) => {
-            const answers = list
+            const entries = list
               .map((item) => {
                 const baseAnswers = item.phase2?.[base.id as keyof typeof item.phase2];
                 if (!baseAnswers || typeof baseAnswers !== "object") return null;
                 const val = (baseAnswers as Record<string, string>)[q.id];
-                return typeof val === "string" ? val.trim() : null;
+                const text = typeof val === "string" ? val.trim() : null;
+                return text ? { text, item } : null;
               })
-              .filter((t): t is string => !!t);
+              .filter((e): e is { text: string; item: FeedbackPayload } => !!e);
             return (
               <div
                 key={`${base.id}-${q.id}`}
@@ -226,14 +251,20 @@ function Phase2View({
                   </h3>
                 </div>
                 <ul className="divide-y divide-zinc-100 px-5 py-2">
-                  {answers.length === 0 ? (
+                  {entries.length === 0 ? (
                     <li className="font-sarabun py-4 text-base text-zinc-500">— ยังไม่มีคำตอบ</li>
                   ) : (
-                    answers.map((text, i) => (
-                      <li key={i} className="font-sarabun whitespace-pre-wrap py-3 text-base text-zinc-800 leading-relaxed">
-                        {text}
-                      </li>
-                    ))
+                    entries.map(({ text, item }, i) => {
+                      const { name, role, area } = answerMeta(item);
+                      return (
+                        <li key={i} className="font-sarabun py-3">
+                          <p className="text-base text-zinc-800 leading-relaxed whitespace-pre-wrap">{text}</p>
+                          <p className="mt-1.5 text-xs text-zinc-400">
+                            {name} · {role} · {area}
+                          </p>
+                        </li>
+                      );
+                    })
                   )}
                 </ul>
               </div>
