@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
+export const runtime = "edge";
+
 const COOKIE_NAME = "dashboard_access";
 const COOKIE_MAX_AGE = 60 * 60 * 24; // 24 ชั่วโมง
 
