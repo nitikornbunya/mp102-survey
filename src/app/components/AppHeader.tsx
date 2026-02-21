@@ -113,6 +113,14 @@ export default function AppHeader({ backLink }: Props) {
                 <button
                   type="button"
                   role="menuitem"
+                  onClick={() => router.push("/dashboard")}
+                  className="flex w-full px-4 py-2.5 text-left text-sm text-zinc-700 transition hover:bg-zinc-100"
+                >
+                  Dashboard
+                </button>
+                <button
+                  type="button"
+                  role="menuitem"
                   onClick={handleLogout}
                   className="flex w-full px-4 py-2.5 text-left text-sm text-zinc-700 transition hover:bg-zinc-100"
                 >
