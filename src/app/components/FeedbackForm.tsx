@@ -5,6 +5,7 @@ import { useLineLiff } from "@/app/context/LineLiffContext";
 import { apiUrl } from "@/lib/api";
 import { phase1Questions, phase2Bases } from "@/lib/questions";
 import type { Phase1Answers, Phase2Answers, BaseAnswers, FeedbackPayload } from "@/lib/types";
+import SuccessToast from "./SuccessToast";
 
 const initialPhase1: Phase1Answers = {
   q1: "",
@@ -47,6 +48,8 @@ export default function FeedbackForm() {
   const [error, setError] = useState<string | null>(null);
   const [phase1Submitted, setPhase1Submitted] = useState(false);
   const [submittedBases, setSubmittedBases] = useState<Set<string>>(new Set());
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [successToastMessage, setSuccessToastMessage] = useState("ส่งคำตอบแล้ว");
   const [loading, setLoading] = useState(true);
 
   const setPhase1Field = (id: keyof Phase1Answers, value: string) => {
@@ -112,6 +115,8 @@ export default function FeedbackForm() {
         if (data.id) setFeedbackId(data.id);
       }
       setPhase1Submitted(true);
+      setSuccessToastMessage("ส่งคำตอบแล้ว");
+      setShowSuccessToast(true);
     } catch (e) {
       setError(e instanceof Error ? e.message : "เกิดข้อผิดพลาด");
     } finally {
@@ -139,6 +144,9 @@ export default function FeedbackForm() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "ส่งไม่สำเร็จ");
       setSubmittedBases((prev) => new Set(prev).add(baseId));
+      const baseTitle = phase2Bases.find((b) => b.id === baseId)?.title ?? baseId;
+      setSuccessToastMessage(`ส่งคำตอบฐาน ${baseTitle} แล้ว`);
+      setShowSuccessToast(true);
     } catch (e) {
       setError(e instanceof Error ? e.message : "เกิดข้อผิดพลาด");
     } finally {
@@ -157,6 +165,11 @@ export default function FeedbackForm() {
 
   return (
     <div className="mx-auto max-w-2xl space-y-8">
+      <SuccessToast
+        show={showSuccessToast}
+        message={successToastMessage}
+        onClose={() => setShowSuccessToast(false)}
+      />
       {error && (
         <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 shadow-sm">
           {error}

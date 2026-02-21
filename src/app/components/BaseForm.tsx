@@ -6,6 +6,7 @@ import { useLineLiff } from "@/app/context/LineLiffContext";
 import { apiUrl } from "@/lib/api";
 import { phase2Bases } from "@/lib/questions";
 import type { Phase2Answers, BaseAnswers, FeedbackPayload } from "@/lib/types";
+import SuccessToast from "./SuccessToast";
 
 type BaseId = "base1" | "base2" | "base3" | "base4";
 
@@ -26,6 +27,7 @@ export default function BaseForm({ baseId }: Props) {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -77,6 +79,7 @@ export default function BaseForm({ baseId }: Props) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "ส่งไม่สำเร็จ");
       setSubmitted(true);
+      setShowSuccessToast(true);
     } catch (e) {
       setError(e instanceof Error ? e.message : "เกิดข้อผิดพลาด");
     } finally {
@@ -95,6 +98,11 @@ export default function BaseForm({ baseId }: Props) {
 
   return (
     <div className="mx-auto max-w-2xl space-y-6">
+      <SuccessToast
+        show={showSuccessToast}
+        message="ส่งคำตอบแล้ว"
+        onClose={() => setShowSuccessToast(false)}
+      />
       {error && (
         <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 shadow-sm">
           {error}

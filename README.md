@@ -16,7 +16,7 @@ npm run dev
 
 | ตัวแปร | ความหมาย |
 |--------|----------|
-| `NEXT_PUBLIC_LIFF_ID` | LIFF ID จาก LINE Developers Console (สำหรับ Login ด้วย LINE) |
+| `NEXT_PUBLIC_LIFF_ID` | LIFF ID จาก LINE Developers Console — โปรเจกต์นี้ใช้ **LINE LIFF login เท่านั้น** (ไม่มี login แบบอื่น) |
 | `NEXT_PUBLIC_API_URL` | URL ของ Backend API เช่น `https://your-backend.vercel.app` เว้นว่าง = ใช้ same origin |
 
 คัดลอก `.env.local.example` เป็น `.env.local` แล้วใส่ค่าตามด้านบน

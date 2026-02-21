@@ -8,10 +8,10 @@ import LineLoginGate from "@/app/components/LineLoginGate";
 import Phase1Form from "@/app/components/Phase1Form";
 
 const BASE_LINKS = [
-  { href: "/base1", label: "ชุดคำถามที่ A", sub: "ฐานที่ A" },
-  { href: "/base2", label: "ชุดคำถามที่ B", sub: "ฐานที่ B" },
-  { href: "/base3", label: "ชุดคำถามที่ C", sub: "ฐานที่ C" },
-  { href: "/base4", label: "ชุดคำถามที่ D", sub: "ฐานที่ D" },
+  { href: "/base1", label: "ชุดคำถาม A", sub: "" },
+  { href: "/base2", label: "ชุดคำถาม B", sub: "" },
+  { href: "/base3", label: "ชุดคำถาม C", sub: "" },
+  { href: "/base4", label: "ชุดคำถาม D", sub: "" },
 ] as const;
 
 function MainContent() {
