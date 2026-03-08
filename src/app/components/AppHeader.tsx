@@ -51,7 +51,7 @@ export default function AppHeader({ backLink }: Props) {
             </Link>
           )}
           <h1 className="truncate text-xl font-bold tracking-tight sm:text-2xl">
-            ระบบรับฟังความคิดเห็น MP102
+            ระบบรับฟังความคิดเห็น สัมมนาท้องถิ่น
           </h1>
         </div>
         {isLoggedIn && profile && (

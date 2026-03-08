@@ -42,7 +42,7 @@ export default function HomeClient({ editProfile = false }: Props) {
       <header className="bg-[#ff6a13] px-4 py-4 text-white shadow-md sm:px-6">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-4">
           <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
-            ระบบรับฟังความคิดเห็น MP102
+            ระบบรับฟังความคิดเห็น สัมมนาท้องถิ่น
           </h1>
           {isLoggedIn && profile && (
             <div className="relative" ref={menuRef}>

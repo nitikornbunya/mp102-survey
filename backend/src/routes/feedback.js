@@ -54,22 +54,25 @@ router.get("/", async (req, res) => {
   }
 });
 
-// POST /api/feedback — สร้าง feedback (ส่ง phase1 ครั้งแรก)
+// POST /api/feedback — สร้าง feedback (ส่ง phase2 บางฐานเป็นครั้งแรก)
 router.post("/", async (req, res) => {
   try {
-    const { lineUserId, lineDisplayName, phase1 } = req.body;
-    if (!lineUserId || !phase1 || typeof phase1 !== "object") {
-      return res.status(400).json({ error: "ต้องส่ง lineUserId และ phase1" });
+    const { lineUserId, lineDisplayName, phase1, phase2 } = req.body;
+    if (!lineUserId) {
+      return res.status(400).json({ error: "ต้องส่ง lineUserId" });
     }
+    const p1 = phase1 && typeof phase1 === "object" ? phase1 : {};
+    const p2 = phase2 && typeof phase2 === "object" ? phase2 : {};
     const { rows } = await pool.query(
-      `INSERT INTO feedback (line_user_id, line_display_name, phase1)
-       VALUES ($1, $2, $3::jsonb)
+      `INSERT INTO feedback (line_user_id, line_display_name, phase1, phase2)
+       VALUES ($1, $2, $3::jsonb, $4::jsonb)
        ON CONFLICT (line_user_id) DO UPDATE SET
          line_display_name = EXCLUDED.line_display_name,
-         phase1 = EXCLUDED.phase1,
+         phase1 = COALESCE(feedback.phase1, '{}'::jsonb) || EXCLUDED.phase1,
+         phase2 = COALESCE(feedback.phase2, '{}'::jsonb) || EXCLUDED.phase2,
          updated_at = NOW()
        RETURNING *`,
-      [lineUserId, lineDisplayName ?? null, JSON.stringify(phase1)]
+      [lineUserId, lineDisplayName ?? null, JSON.stringify(p1), JSON.stringify(p2)]
     );
     res.status(201).json(rowToFeedback(rows[0]));
   } catch (err) {

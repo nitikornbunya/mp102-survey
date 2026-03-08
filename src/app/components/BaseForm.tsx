@@ -8,7 +8,7 @@ import { phase2Bases } from "@/lib/questions";
 import type { Phase2Answers, BaseAnswers, FeedbackPayload } from "@/lib/types";
 import SuccessToast from "./SuccessToast";
 
-type BaseId = "base1" | "base2" | "base3" | "base4";
+type BaseId = "base1" | "base2" | "base3" | "base4" | "base5" | "base6";
 
 function initialBaseAnswers(baseId: BaseId): BaseAnswers {
   const base = phase2Bases.find((b) => b.id === baseId);
@@ -60,24 +60,36 @@ export default function BaseForm({ baseId }: Props) {
   const canSubmit = base.questions.every((q) => (answers[q.id] ?? "").trim());
 
   const submit = async () => {
-    if (!feedbackId || !profile?.userId) {
-      setError("กรุณาส่งคำตอบช่วงที่ 1 ที่หน้าหลักก่อน");
-      return;
-    }
+    if (!profile?.userId) return;
     setSubmitting(true);
     setError(null);
     try {
-      const res = await fetch(apiUrl("/api/feedback"), {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          id: feedbackId,
-          lineUserId: profile.userId,
-          phase2: { [baseId]: answers },
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "ส่งไม่สำเร็จ");
+      if (feedbackId) {
+        const res = await fetch(apiUrl("/api/feedback"), {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id: feedbackId,
+            lineUserId: profile.userId,
+            phase2: { [baseId]: answers },
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "ส่งไม่สำเร็จ");
+      } else {
+        const res = await fetch(apiUrl("/api/feedback"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            phase2: { [baseId]: answers },
+            lineUserId: profile.userId,
+            lineDisplayName: profile.displayName,
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "ส่งไม่สำเร็จ");
+        if (data.id) setFeedbackId(data.id);
+      }
       setSubmitted(true);
       setShowSuccessToast(true);
     } catch (e) {
@@ -109,45 +121,28 @@ export default function BaseForm({ baseId }: Props) {
         </div>
       )}
 
-      {!feedbackId && (
-        <div className="rounded-xl border border-amber-200 bg-amber-50/80 px-4 py-3 text-sm text-amber-800">
-          กรุณาส่งคำตอบช่วงที่ 1 ที่{" "}
-          <Link href="/" className="font-medium underline">
-            หน้าหลัก
-          </Link>{" "}
-          ก่อน จึงจะส่งคำตอบชุดนี้ได้
-        </div>
-      )}
-
       <section className="overflow-hidden rounded-2xl border border-[#e7e5e2] bg-white shadow-lg shadow-zinc-200/40">
         <div className="border-l-4 border-[#ff6a13] bg-zinc-50/80 px-5 py-3">
           <h2 className="font-sarabun text-xl font-semibold text-zinc-800">{base.title}</h2>
         </div>
         <div className="space-y-4 p-5 sm:p-6">
+          {"description" in base && base.description && (
+            <p className="font-sarabun text-base font-medium text-zinc-700">
+              {base.description}
+            </p>
+          )}
           {base.questions.map((q) => (
             <div key={q.id}>
               <label className="font-sarabun mb-1.5 block text-lg font-medium text-zinc-700">
                 {q.id} {q.label}
               </label>
-              {"type" in q && q.type === "rating" ? (
-                <input
-                  type="number"
-                  min={(q as { min?: number }).min ?? 1}
-                  max={(q as { max?: number }).max ?? 10}
-                  value={answers[q.id] ?? ""}
-                  onChange={(e) => setField(q.id, e.target.value)}
-                  placeholder={q.placeholder}
-                  className="font-sarabun w-full rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-3 text-base text-zinc-900 placeholder-zinc-400 transition focus:border-[#ff6a13] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6a13]/20"
-                />
-              ) : (
-                <textarea
-                  className="font-sarabun w-full rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-2.5 text-base text-zinc-900 placeholder-zinc-400 transition focus:border-[#ff6a13] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6a13]/20"
-                  rows={3}
-                  placeholder={q.placeholder}
-                  value={answers[q.id] ?? ""}
-                  onChange={(e) => setField(q.id, e.target.value)}
-                />
-              )}
+              <textarea
+                className="font-sarabun w-full rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-2.5 text-base text-zinc-900 placeholder-zinc-400 transition focus:border-[#ff6a13] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6a13]/20"
+                rows={3}
+                placeholder={q.placeholder}
+                value={answers[q.id] ?? ""}
+                onChange={(e) => setField(q.id, e.target.value)}
+              />
             </div>
           ))}
         </div>
@@ -161,7 +156,7 @@ export default function BaseForm({ baseId }: Props) {
           <button
             type="button"
             onClick={submit}
-            disabled={!feedbackId || !canSubmit || submitting}
+            disabled={!canSubmit || submitting}
             className="rounded-xl bg-[#ff6a13] px-6 py-3 font-medium text-white shadow-md shadow-[#ff6a13]/25 transition hover:bg-[#e55f10] disabled:opacity-50 active:scale-[0.98]"
           >
             {submitting ? "กำลังส่ง..." : "ส่งคำตอบ"}

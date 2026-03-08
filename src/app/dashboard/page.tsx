@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { apiUrl } from "@/lib/api";
-import { phase1Questions, phase2Bases } from "@/lib/questions";
+import { phase2Bases } from "@/lib/questions";
 import { ROLE_LABELS } from "@/lib/registration-types";
 import type { FeedbackPayload } from "@/lib/types";
 import type { RoleKey } from "@/lib/registration-types";
@@ -45,31 +45,24 @@ function answerMeta(item: FeedbackPayload) {
   return { name, role, area };
 }
 
-type TabId = "phase1" | "phase2";
-
-type FetchPhaseOptions = {
-  hasPhase1?: boolean;
+type FetchOptions = {
   hasPhase2?: boolean;
-  groupNumber?: string; // ตัวเลขเดียว หรือหลายกลุ่มคั่นด้วย comma เช่น "5" หรือ "1,2,3"
+  groupNumber?: string;
 };
 
 export default function DashboardPage() {
-  const [tab, setTab] = useState<TabId>("phase1");
-  const [phase1List, setPhase1List] = useState<FeedbackPayload[]>([]);
-  const [phase2List, setPhase2List] = useState<FeedbackPayload[]>([]);
+  const [list, setList] = useState<FeedbackPayload[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const [filterBase, setFilterBase] = useState<string>("all");
   const [filterGroup, setFilterGroup] = useState<string>("all");
-  const [phase1HasSearched, setPhase1HasSearched] = useState(false);
-  const [phase2HasSearched, setPhase2HasSearched] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
 
-  const fetchList = (options: FetchPhaseOptions, setData: (data: FeedbackPayload[]) => void) => {
+  const fetchList = (options: FetchOptions) => {
     setLoading(true);
     setError(null);
     const params = new URLSearchParams({ all: "true" });
-    if (options.hasPhase1 === true) params.set("hasPhase1", "true");
     if (options.hasPhase2 === true) params.set("hasPhase2", "true");
     if (options.groupNumber && options.groupNumber !== "all") {
       params.set("groupNumber", options.groupNumber);
@@ -77,31 +70,23 @@ export default function DashboardPage() {
     const url = apiUrl(`/api/feedback?${params.toString()}`);
     fetch(url)
       .then((r) => r.json())
-      .then((data) => setData(Array.isArray(data) ? data : []))
+      .then((data) => setList(Array.isArray(data) ? data : []))
       .catch(() => setError("โหลดข้อมูลไม่สำเร็จ"))
       .finally(() => setLoading(false));
   };
 
-  const handlePhase1Search = () => {
-    fetchList({ hasPhase1: true }, setPhase1List);
-    setPhase1HasSearched(true);
-  };
-
-  const handlePhase2Search = () => {
+  const handleSearch = () => {
     const groupNumber = filterGroup === "all" ? undefined : filterGroup;
-    fetchList({ hasPhase2: true, groupNumber }, setPhase2List);
-    setPhase2HasSearched(true);
+    fetchList({ hasPhase2: true, groupNumber });
+    setHasSearched(true);
   };
 
-  const handlePhase2Refresh = () => {
+  const handleRefresh = () => {
     const groupNumber = filterGroup === "all" ? undefined : filterGroup;
-    fetchList({ hasPhase2: true, groupNumber }, setPhase2List);
+    fetchList({ hasPhase2: true, groupNumber });
   };
 
-  const currentList = tab === "phase1" ? phase1List : phase2List;
-  const currentHasSearched = tab === "phase1" ? phase1HasSearched : phase2HasSearched;
-
-  if (loading && currentList.length === 0 && currentHasSearched) {
+  if (loading && list.length === 0 && hasSearched) {
     return (
       <div className="flex min-h-[50vh] flex-col items-center justify-center gap-4">
         <div className="h-10 w-10 animate-spin rounded-full border-2 border-[#ff6a13] border-t-transparent" />
@@ -136,157 +121,22 @@ export default function DashboardPage() {
         <div className="mb-6 rounded-2xl border border-[#e7e5e2] bg-white p-5 shadow-lg shadow-zinc-200/40 sm:p-6">
           <p className="text-sm font-medium uppercase tracking-wide text-zinc-500">จำนวนรายการ</p>
           <p className="mt-1 text-3xl font-bold text-[#ff6a13] sm:text-4xl">
-            {tab === "phase1" ? phase1List.length : phase2List.length}
+            {list.length}
           </p>
-          <p className="mt-1 text-sm text-zinc-600">
-            {tab === "phase1" ? "คำตอบช่วงที่ 1" : "คำตอบช่วงที่ 2"}
-          </p>
+          <p className="mt-1 text-sm text-zinc-600">คำตอบทั้งหมด</p>
         </div>
 
-        {/* Tabs */}
-        <div className="mb-6 flex gap-1 rounded-xl border border-[#e7e5e2] bg-white p-1 shadow-sm">
-          <button
-            type="button"
-            onClick={() => setTab("phase1")}
-            className={`flex-1 rounded-lg px-4 py-2.5 text-sm font-medium transition ${
-              tab === "phase1"
-                ? "bg-[#ff6a13] text-white shadow"
-                : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-800"
-            }`}
-          >
-            ช่วงคำถามที่ 1
-          </button>
-          <button
-            type="button"
-            onClick={() => setTab("phase2")}
-            className={`flex-1 rounded-lg px-4 py-2.5 text-sm font-medium transition ${
-              tab === "phase2"
-                ? "bg-[#ff6a13] text-white shadow"
-                : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-800"
-            }`}
-          >
-            ช่วงคำถามที่ 2
-          </button>
-        </div>
-
-        {tab === "phase1" && !phase1HasSearched ? (
-          <div className="flex flex-col items-center justify-center rounded-2xl border border-[#e7e5e2] bg-white py-16 shadow-sm">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-zinc-100 text-zinc-400">
-              <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </div>
-            <p className="text-lg font-medium text-zinc-600">กดปุ่ม ค้นหา เพื่อโหลดข้อมูล</p>
-            <p className="mt-1 text-sm text-zinc-500">เมื่อมีผู้ส่งคำตอบ จะแสดงในหน้านี้</p>
-            <button
-              type="button"
-              onClick={handlePhase1Search}
-              disabled={loading}
-              className="mt-6 flex items-center gap-2 rounded-xl bg-[#ff6a13] px-6 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-[#e55f0f] disabled:opacity-60"
-            >
-              <SearchIcon />
-              ค้นหา
-            </button>
-          </div>
-        ) : tab === "phase1" ? (
-          <Phase1View list={phase1List} onRefresh={handlePhase1Search} isLoading={loading} />
-        ) : (
-          <Phase2View
-            list={phase2List}
-            filterBase={filterBase}
-            filterGroup={filterGroup}
-            onFilterBase={setFilterBase}
-            onFilterGroup={setFilterGroup}
-            hasSearched={phase2HasSearched}
-            onSearch={handlePhase2Search}
-            onRefresh={handlePhase2Refresh}
-            isLoading={loading}
-          />
-        )}
-      </div>
-    </div>
-  );
-}
-
-function Phase1View({
-  list,
-  onRefresh,
-  isLoading,
-}: {
-  list: FeedbackPayload[];
-  onRefresh: () => void;
-  isLoading: boolean;
-}) {
-  const allIds = phase1Questions.map((q) => q.id);
-  const [openIds, setOpenIds] = useState<Set<string>>(() => new Set(allIds));
-
-  const toggle = (id: string) => {
-    setOpenIds((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
-  };
-
-  return (
-    <div className="space-y-6">
-      <div className="flex justify-end">
-        <button
-          type="button"
-          onClick={onRefresh}
-          disabled={isLoading}
-          className="flex items-center gap-2 rounded-xl border border-zinc-200 bg-white px-5 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition hover:bg-zinc-50 disabled:opacity-60"
-        >
-          <RefreshIcon />
-          รีเฟรช
-        </button>
-      </div>
-      <div className="space-y-8">
-      {phase1Questions.map((q) => {
-        const entries = list
-          .map((item) => {
-            const text = item.phase1?.[q.id as keyof typeof item.phase1]?.trim();
-            return text ? { text, item } : null;
-          })
-          .filter((e): e is { text: string; item: FeedbackPayload } => !!e);
-        const isOpen = openIds.has(q.id);
-        return (
-          <div key={q.id} className="overflow-hidden rounded-2xl border border-[#e7e5e2] bg-white shadow-md shadow-zinc-200/30">
-            <button
-              type="button"
-              onClick={() => toggle(q.id)}
-              className="flex w-full cursor-pointer items-center justify-between gap-3 border-l-4 border-[#ff6a13] bg-zinc-50/80 px-5 py-3 text-left transition hover:bg-zinc-100/80"
-              aria-expanded={isOpen}
-            >
-              <h3 className="font-sarabun text-lg font-semibold text-zinc-800">{q.label}</h3>
-              <span
-                className={`flex h-8 w-8 shrink-0 items-center justify-center text-zinc-500 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                aria-hidden
-              >
-                <ChevronDownIcon />
-              </span>
-            </button>
-            {isOpen && (
-              <ul className="divide-y divide-zinc-100 px-5 py-2">
-                {entries.length === 0 ? (
-                  <li className="font-sarabun py-4 text-base text-zinc-500">— ยังไม่มีคำตอบ</li>
-                ) : (
-                  entries.map(({ text, item }, i) => {
-                    const { role } = answerMeta(item);
-                    return (
-                      <li key={i} className="font-sarabun py-3">
-                        <p className="text-base text-zinc-800 leading-relaxed whitespace-pre-wrap">{text}</p>
-                        <p className="mt-1.5 text-xs text-zinc-400">{role}</p>
-                      </li>
-                    );
-                  })
-                )}
-              </ul>
-            )}
-          </div>
-        );
-      })}
+        <Phase2View
+          list={list}
+          filterBase={filterBase}
+          filterGroup={filterGroup}
+          onFilterBase={setFilterBase}
+          onFilterGroup={setFilterGroup}
+          hasSearched={hasSearched}
+          onSearch={handleSearch}
+          onRefresh={handleRefresh}
+          isLoading={loading}
+        />
       </div>
     </div>
   );
@@ -402,7 +252,7 @@ function Phase2View({
     <div className="space-y-6">
       <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-[#e7e5e2] bg-white p-4 shadow-sm">
         <div className="flex items-center gap-2">
-          <label className="text-sm font-medium text-zinc-600">ชุดคำถาม:</label>
+          <label className="text-sm font-medium text-zinc-600">ฐาน:</label>
           <select
             value={filterBase}
             onChange={(e) => onFilterBase(e.target.value)}
