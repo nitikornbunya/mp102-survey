@@ -81,13 +81,7 @@ export default function LineLoginGate({
         <div className="mt-8 flex justify-center">
           <button
             type="button"
-            onClick={() =>
-              login(
-                typeof window !== "undefined"
-                  ? { redirectUri: window.location.href }
-                  : undefined
-              )
-            }
+            onClick={() => login()}
             className="flex items-center gap-3 rounded-xl bg-[#06C755] px-8 py-3.5 font-medium text-white shadow-lg shadow-[#06C755]/25 transition hover:bg-[#05b34a] hover:shadow-[#06C755]/30 active:scale-[0.98]"
           >
             <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden>

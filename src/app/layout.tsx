@@ -18,8 +18,8 @@ const sarabun = Sarabun({
 });
 
 export const metadata: Metadata = {
-  title: "ระบบรับฟังความคิดเห็น MP102",
-  description: "แบบฟอร์มรับฟังความคิดเห็น ช่วงคำถามที่ 1 และช่วงคำถามที่ 2 ตาม 4 ฐาน",
+  title: "ระบบรับฟังความคิดเห็น สัมมนาท้องถิ่น",
+  description: "แบบฟอร์มรับฟังความคิดเห็น พรรคประชาชน",
 };
 
 export default function RootLayout({

@@ -1,4 +1,4 @@
-# ระบบรับฟังความคิดเห็น MP102 (Frontend)
+# ระบบรับฟังความคิดเห็น สัมมนาท้องถิ่น (Frontend)
 
 โปรเจกต์นี้เป็น **frontend เท่านั้น** ใช้ Next.js (App Router)  
 Backend (API สำหรับ feedback และ registration) แยกอยู่ที่โปรเจกต์อื่น

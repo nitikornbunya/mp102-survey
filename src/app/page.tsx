@@ -5,13 +5,16 @@ import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import AppHeader from "@/app/components/AppHeader";
 import LineLoginGate from "@/app/components/LineLoginGate";
-import Phase1Form from "@/app/components/Phase1Form";
+// import Phase1Form from "@/app/components/Phase1Form";
 
 const BASE_LINKS = [
-  { href: "/base1", label: "ชุดคำถาม A", sub: "" },
-  { href: "/base2", label: "ชุดคำถาม B", sub: "" },
-  { href: "/base3", label: "ชุดคำถาม C", sub: "" },
-  { href: "/base4", label: "ชุดคำถาม D", sub: "" },
+  { href: "/base1", label: "ชุดคำถาม 1", sub: "" },
+  { href: "/base2", label: "ชุดคำถาม 2", sub: "" },
+  { href: "/base3", label: "ชุดคำถาม 3", sub: "" },
+  { href: "/base4", label: "ชุดคำถาม 4", sub: "" },
+  { href: "/base5", label: "ชุดคำถาม 5", sub: "" },
+  { href: "/base6", label: "ชุดคำถาม 6", sub: "" },
+
 ] as const;
 
 function MainContent() {
@@ -29,13 +32,13 @@ function MainContent() {
         </p>
 
         <LineLoginGate editProfile={editProfile}>
-          <Phase1Form />
+          {/* <Phase1Form /> */}
 
           {/* ลิงก์ไปชุดคำถามแต่ละฐาน (สำหรับสแกน QR หรือเข้าโดยตรง) */}
           <div className="mt-10">
-            <h2 className="font-sarabun mb-4 text-lg font-semibold text-zinc-800">
-              ช่วงคำถามที่ 2 (ตาม 4 ฐาน)
-            </h2>
+            {/* <h2 className="font-sarabun mb-4 text-lg font-semibold text-zinc-800">
+              ค
+            </h2> */}
             <p className="mb-6 text-sm text-zinc-600">
               เลือกชุดคำถามที่ต้องการตอบ หรือสแกน QR Code ที่แต่ละฐาน
             </p>
