@@ -1,17 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import type { LineProfile } from "@/app/context/LineLiffContext";
 import { apiUrl } from "@/lib/api";
 import { ROLE_LABELS, type RoleKey } from "@/lib/registration-types";
-import { loadMpDivision } from "@/lib/mp-division";
-import SearchableSelect from "@/app/components/SearchableSelect";
 
 const ROLE_OPTIONS: RoleKey[] = [
-  "mp_constituency",
-  "mp_list",
-  "provincial_team",
-  "fa_team",
+  "regional_coordinator",
+  "provincial_coordinator",
+  "mayor",
+  "sao_president",
+  "pao_president",
+  "bma_council",
+  "pao_council",
+  "municipal_council",
+  "sao_council",
+  "lao_team",
 ];
 
 type Props = {
@@ -22,39 +26,13 @@ type Props = {
 export default function RegistrationForm({ profile, onSuccess }: Props) {
   const [fullName, setFullName] = useState("");
   const [role, setRole] = useState<RoleKey | "">("");
-  const [provinceId, setProvinceId] = useState("");
-  const [districtId, setDistrictId] = useState("");
-  const [provinceTeamId, setProvinceTeamId] = useState("");
   const [groupNumber, setGroupNumber] = useState<number | "">("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [mpDivision, setMpDivision] = useState<Awaited<ReturnType<typeof loadMpDivision>> | null>(null);
-  const [loadingDivision, setLoadingDivision] = useState(true);
-
-  const provinces = mpDivision?.provinces ?? [];
-  const selectedProvince = provinces.find((p) => p.province === provinceId);
-  const districts = selectedProvince?.districts ?? [];
-
-  useEffect(() => {
-    loadMpDivision()
-      .then(setMpDivision)
-      .catch(() => setError("โหลดรายการจังหวัดไม่สำเร็จ"))
-      .finally(() => setLoadingDivision(false));
-  }, []);
-
-  useEffect(() => {
-    if (role !== "mp_constituency") {
-      setProvinceId("");
-      setDistrictId("");
-    }
-    if (role !== "provincial_team") setProvinceTeamId("");
-  }, [role]);
 
   const canSubmit =
     fullName.trim() &&
     role &&
-    (role !== "mp_constituency" || (provinceId && districtId)) &&
-    (role !== "provincial_team" || provinceTeamId) &&
     groupNumber !== "" &&
     Number(groupNumber) >= 1 &&
     Number(groupNumber) <= 40;
@@ -65,10 +43,6 @@ export default function RegistrationForm({ profile, onSuccess }: Props) {
     setSubmitting(true);
     setError(null);
     try {
-      // ส่ง provinceId เป็นชื่อจังหวัดภาษาไทย, districtId เป็นตัวเลขเขต
-      const districtNum =
-        role === "mp_constituency" && districtId ? Number(districtId) : undefined;
-
       const res = await fetch(apiUrl("/api/registration"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -77,9 +51,6 @@ export default function RegistrationForm({ profile, onSuccess }: Props) {
           lineDisplayName: profile.displayName,
           fullName: fullName.trim(),
           role,
-          provinceId: role === "mp_constituency" ? provinceId || undefined : undefined,
-          districtId: districtNum,
-          province: role === "provincial_team" ? provinceTeamId || undefined : undefined,
           groupNumber: Number(groupNumber),
         }),
       });
@@ -148,57 +119,6 @@ export default function RegistrationForm({ profile, onSuccess }: Props) {
               </label>
             ))}
           </div>
-
-          {role === "mp_constituency" && (
-            <div className="mt-4 space-y-4 rounded-xl border border-zinc-100 bg-zinc-50/50 p-4">
-              <p className="text-sm font-medium text-zinc-600">จังหวัด-เขต</p>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="mb-1 block text-xs text-zinc-500">จังหวัด</label>
-                  <SearchableSelect
-                    value={provinceId}
-                    onChange={(v) => {
-                      setProvinceId(v);
-                      setDistrictId("");
-                    }}
-                    options={provinces.map((p) => ({ value: p.province, label: p.province }))}
-                    placeholder="ค้นหาหรือเลือกจังหวัด..."
-                    disabled={loadingDivision}
-                  />
-                </div>
-                <div>
-                  <label className="mb-1 block text-xs text-zinc-500">เขต</label>
-                  <select
-                    value={districtId}
-                    onChange={(e) => setDistrictId(e.target.value)}
-                    disabled={!provinceId || loadingDivision}
-                    className="w-full rounded-lg border border-zinc-200 bg-white px-3 py-2 text-zinc-900 focus:border-[#ff6a13] focus:outline-none focus:ring-1 focus:ring-[#ff6a13]"
-                  >
-                    <option value="">-- เลือกเขต --</option>
-                    {districts.map((d) => (
-                      <option key={d} value={d}>
-                        เขต {d}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {role === "provincial_team" && (
-            <div className="mt-4">
-              <label className="mb-1.5 block text-sm text-zinc-600">เลือกจังหวัด</label>
-              <SearchableSelect
-                value={provinceTeamId}
-                onChange={setProvinceTeamId}
-                options={provinces.map((p) => ({ value: p.province, label: p.province }))}
-                placeholder="ค้นหาหรือเลือกจังหวัด..."
-                disabled={loadingDivision}
-                className="rounded-xl border-zinc-200 bg-zinc-50/50 px-4 py-3 focus:ring-2 focus:ring-[#ff6a13]/20"
-              />
-            </div>
-          )}
         </div>
 
         <div>

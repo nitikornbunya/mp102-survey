@@ -12,10 +12,16 @@ export type Phase2Answers = {
 
 /** บทบาท (จาก registrations) */
 export type FeedbackRoleKey =
-  | "mp_constituency"
-  | "mp_list"
-  | "provincial_team"
-  | "fa_team";
+  | "regional_coordinator"
+  | "provincial_coordinator"
+  | "mayor"
+  | "sao_president"
+  | "pao_president"
+  | "bma_council"
+  | "pao_council"
+  | "municipal_council"
+  | "sao_council"
+  | "lao_team";
 
 export type FeedbackPayload = {
   id?: string;

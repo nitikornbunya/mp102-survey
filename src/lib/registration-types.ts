@@ -1,15 +1,27 @@
 /** บทบาทผู้ใช้ */
 export type RoleKey =
-  | "mp_constituency"   // ผู้สมัคร สส. เขต
-  | "mp_list"           // ผู้สมัคร สส. บัญชีรายชื่อ
-  | "provincial_team"   // ทีมจังหวัด
-  | "fa_team";     // ส่วนกลางพรรค
+  | "regional_coordinator"
+  | "provincial_coordinator"
+  | "mayor"
+  | "sao_president"
+  | "pao_president"
+  | "bma_council"
+  | "pao_council"
+  | "municipal_council"
+  | "sao_council"
+  | "lao_team";
 
 export const ROLE_LABELS: Record<RoleKey, string> = {
-  mp_constituency: "ผู้สมัคร สส. เขต",
-  mp_list: "ผู้สมัคร สส. บัญชีรายชื่อ",
-  provincial_team: "ทีมจังหวัด",
-  fa_team: "ทีมฟา",
+  regional_coordinator: "ผู้ประสานงานภาค / รองเลขาภาค",
+  provincial_coordinator: "ผู้ประสานงานจังหวัด / ตัวแทนจังหวัด",
+  mayor: "นายกเทศมนตรี (นายกเทศบาล)",
+  sao_president: "นายกองค์การบริหารส่วนตำบล (อบต.)",
+  pao_president: "นายกองค์การบริหารส่วนจังหวัด (อบจ.)",
+  bma_council: "สมาชิกสภากรุงเทพฯ",
+  pao_council: "สมาชิกสภาองค์การบริหารส่วนจังหวัด (ส.อบจ.)",
+  municipal_council: "สมาชิกสภาเทศบาล (สท.)",
+  sao_council: "สมาชิกสภา อบต. (ส.อบต.)",
+  lao_team: "ทีมนายก อปท.",
 };
 
 export type RegistrationPayload = {
@@ -17,11 +29,6 @@ export type RegistrationPayload = {
   lineDisplayName?: string;
   fullName: string;
   role: RoleKey;
-  /** สำหรับ สส.เขต */
-  provinceId?: string;
-  districtId?: string;
-  /** สำหรับ ทีมจังหวัด: รหัสจังหวัด */
-  province?: string;
   /** กลุ่มที่อยู่ ในงานสัมมนา 1-40 */
   groupNumber: number;
   createdAt: string;
