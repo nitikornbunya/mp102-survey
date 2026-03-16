@@ -81,9 +81,10 @@ export default function BaseForm({ baseId }: Props) {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            phase2: { [baseId]: answers },
             lineUserId: profile.userId,
             lineDisplayName: profile.displayName,
+            phase1: {},
+            phase2: { [baseId]: answers },
           }),
         });
         const data = await res.json();
