@@ -95,9 +95,10 @@ export default function FeedbackForm() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            phase2: { [baseId]: phase2[baseId as keyof Phase2Answers] },
             lineUserId: profile.userId,
             lineDisplayName: profile.displayName,
+            phase1: {},
+            phase2: { [baseId]: phase2[baseId as keyof Phase2Answers] },
           }),
         });
         const data = await res.json();
