@@ -40,9 +40,9 @@ function provinceDistrictLabel(item: FeedbackPayload): string {
 
 function answerMeta(item: FeedbackPayload) {
   const name = item.fullName?.trim() || item.lineDisplayName?.trim() || "—";
-  const role = item.role ? ROLE_LABELS[item.role as RoleKey] : "—";
+  const roleLabel = item.role && item.role in ROLE_LABELS ? ROLE_LABELS[item.role as RoleKey] : (item.role ?? "—");
   const area = provinceDistrictLabel(item);
-  return { name, role, area };
+  return { name, role: roleLabel, area };
 }
 
 type FetchOptions = {
